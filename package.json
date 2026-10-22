@@ -1,0 +1,41 @@
+{
+  "scripts": {
+    "start:dev": "cds watch",
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts}": "eslint --fix"
+  },
+  "dependencies": {
+    "@sap/cds": "^10.1.1",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@cap-js/cds-typer": ">=0.1",
+    "@cap-js/cds-types": "^0.18.0",
+    "@cap-js/sqlite": "^3.1.2",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.0.0",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-n": "^18.5.0",
+    "eslint-plugin-prettier": "^5.5.7",
+    "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "tsx": "^4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0"
+  },
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "unrs-resolver@1.12.2": true
+  }
+}
