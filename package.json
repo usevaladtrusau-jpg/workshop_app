@@ -2,11 +2,15 @@
   "scripts": {
     "start:dev": "cds watch",
     "lint": "eslint .",
-    "fix": "eslint --fix .",
+    "lint:fix": "eslint --fix .",
+    "format:cds": "format-cds -f .",
+    "format:cds:check": "format-cds --check .",
+    "check": "npm run lint && npm run format:cds:check",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts}": "eslint --fix"
+    "*.{ts}": "eslint --fix",
+    "*.cds": "format-cds -f"
   },
   "dependencies": {
     "@sap/cds": "^10.1.1",
@@ -17,6 +21,7 @@
     "@cap-js/cds-types": "^0.18.0",
     "@cap-js/sqlite": "^3.1.2",
     "@eslint/js": "^10.0.1",
+    "@sap/cds-lsp": "^10.2.1",
     "@types/node": "^24.0.0",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
