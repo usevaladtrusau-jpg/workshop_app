@@ -1,6 +1,14 @@
-namespace airline;
-
-entity Ticket {
-    name: String(100);
-    count: Integer;
-}
+using from './model/aircraftModels';
+using from './model/aircrafts';
+using from './model/aircraftSeats';
+using from './model/airports';
+using from './model/bookings';
+using from './model/bookingsCustomers';
+using from './model/cities';
+using from './model/countries';
+using from './model/customers';
+using from './model/flights';
+using from './model/payments';
+using from './model/routes';
+using from './model/seatReservations';
+using from './model/tickets';
