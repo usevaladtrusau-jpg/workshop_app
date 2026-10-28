@@ -1,8 +1,6 @@
-# Database schema
-
-## [Schema link](https://app.diagrams.net/#G1HgJ0-ZfB5lWq4-J5ZbmkkjF5am4puFKN#%7B%22pageId%22%3A%22bRGkLNK6IekwTJD3EF-B%22%7D)
-
 # Схема базы данных авиакомпании (SAP CAP / CDS)
+
+## [Диаграмма](https://app.diagrams.net/#G1HgJ0-ZfB5lWq4-J5ZbmkkjF5am4puFKN#%7B%22pageId%22%3A%22bRGkLNK6IekwTJD3EF-B%22%7D)
 
 Схема описывает доменную модель авиакомпании: справочники географии и аэропортов, парк воздушных судов, рейсы и маршруты, бронирования, билеты, места и платежи.
 
