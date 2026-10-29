@@ -1,6 +1,10 @@
 namespace airline.db;
 
-using {cuid, managed} from '@sap/cds/common';
+using {
+  cuid,
+  managed,
+  Currency
+} from '@sap/cds/common';
 using airline.db.Bookings from './bookings';
 
 type PaymentStatuses : String enum {
@@ -19,7 +23,7 @@ entity Payments : cuid, managed {
   provider          : String(50)      @mandatory;
   providerPaymentId : String(256);
   totalPrice        : Decimal(12, 3)  @mandatory;
-  currency          : String(3)       @mandatory;
+  currency          : Currency        @mandatory;
   status            : PaymentStatuses @mandatory;
   paidAt            : Timestamp;
 }

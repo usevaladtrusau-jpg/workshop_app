@@ -11,6 +11,10 @@ type CabinClasses : String enum {
   First;
 }
 
+@assert.unique.unique_seatNumbers: [
+  aircraft,
+  seatNumbers
+]
 entity AircraftSeats : cuid, managed {
   aircraft         : Association to one Aircrafts;
   seatNumber       : String(3)    @mandatory;

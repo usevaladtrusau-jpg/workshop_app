@@ -1,6 +1,10 @@
 namespace airline.db;
 
-using {cuid, managed} from '@sap/cds/common';
+using {
+  cuid,
+  managed,
+  Timezone
+} from '@sap/cds/common';
 using airline.db.Cities from './cities';
 using airline.db.Routes from './routes';
 
@@ -13,7 +17,7 @@ entity Airports : cuid, managed {
   iataCode        : String(3)   @mandatory;
   icaoCode        : String(4);
   name            : String(200) @mandatory;
-  timeZone        : String(64)  @mandatory;
+  timeZone        : Timezone    @mandatory;
 
   departureRoutes : Association to many Routes
                       on departureRoutes.departureAirport = $self;

@@ -1,6 +1,10 @@
 namespace airline.db;
 
-using {cuid, managed} from '@sap/cds/common';
+using {
+  cuid,
+  managed,
+  Country
+} from '@sap/cds/common';
 using airline.db.Bookings from './bookings';
 using airline.db.BookingsCustomers from './bookingsCustomers';
 using airline.db.Tickets from './tickets';
@@ -20,7 +24,7 @@ entity Customers : cuid, managed {
   documentNumber    : String(100);
   documentExpiry    : Date;
   role              : CustomersRoles @mandatory;
-  nationality       : String(2);
+  nationality       : Country;
 
   bookings          : Association to many Bookings
                         on bookings.customer = $self;

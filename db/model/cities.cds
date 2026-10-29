@@ -1,11 +1,14 @@
 namespace airline.db;
 
-using {cuid, managed} from '@sap/cds/common';
-using airline.db.Countries from './countries';
+using {
+  cuid,
+  managed,
+  Country
+} from '@sap/cds/common';
 using airline.db.Airports from './airports.cds';
 
 entity Cities : cuid, managed {
-  country  : Association to one Countries;
+  country  : Country;
   name     : String(150) @mandatory;
 
   airports : Association to many Airports

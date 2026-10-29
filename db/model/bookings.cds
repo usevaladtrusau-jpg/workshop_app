@@ -1,6 +1,10 @@
 namespace airline.db;
 
-using {cuid, managed} from '@sap/cds/common';
+using {
+  cuid,
+  managed,
+  Currency
+} from '@sap/cds/common';
 using airline.db.Customers from './customers';
 using airline.db.BookingsCustomers from './bookingsCustomers';
 using airline.db.Tickets from './tickets';
@@ -19,7 +23,7 @@ type BookingStatuses : String enum {
 entity Bookings : cuid, managed {
   customer          : Association to one Customers;
   status            : BookingStatuses @mandatory;
-  currency          : String(3);
+  currency          : Currency;
   totalPrice        : Decimal(12, 3)  @mandatory;
   bookingReference  : String(20)      @mandatory;
   expiresAt         : Timestamp;
