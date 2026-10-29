@@ -5,7 +5,6 @@ using from './model/airports';
 using from './model/bookings';
 using from './model/bookingsCustomers';
 using from './model/cities';
-using from './model/countries';
 using from './model/customers';
 using from './model/flights';
 using from './model/payments';
