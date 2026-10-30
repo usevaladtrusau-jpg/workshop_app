@@ -13,7 +13,7 @@ type CabinClasses : String enum {
 
 @assert.unique.unique_seatNumbers: [
   aircraft,
-  seatNumbers
+  seatNumber
 ]
 entity AircraftSeats : cuid, managed {
   aircraft         : Association to one Aircrafts;
