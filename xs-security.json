@@ -1,0 +1,349 @@
+{
+ "xsappname": "airline",
+ "scopes": [
+  {
+   "name": "$XSAPPNAME.ReadCustomers",
+   "descriptrion": "Get customers requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateCustomers",
+   "descriptrion": "Put Patch customers requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteCustomers",
+   "descriptrion": "Delete customers requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateCustomers",
+   "descriptrion": "Create customer requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadAircraftModels",
+   "descriptrion": "Read aircraft models requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateAircraftModels",
+   "descriptrion": "Put Patch aircraft models requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteAircraftModels",
+   "descriptrion": "Delete aircraft models requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateAircraftModels",
+   "descriptrion": "Create aircraft models requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadAircrafts",
+   "descriptrion": "Read aircraft requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteAircrafts",
+   "descriptrion": "Delete aircraft requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateAircrafts",
+   "descriptrion": "Put Patch aircraft requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateAircrafts",
+   "descriptrion": "Create aircraft requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadAircraftSeats",
+   "descriptrion": "Read aircraft seats requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteAircraftSeats",
+   "descriptrion": "Delete aircraft seats requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateAircraftSeats",
+   "descriptrion": "Put Patch aircraft seats requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateAircraftSeats",
+   "descriptrion": "Create aircraft seats requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadAirports",
+   "descriptrion": "Read airports requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteAirports",
+   "descriptrion": "Delete airports requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateAirports",
+   "descriptrion": "Put Patch airports requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateAirports",
+   "descriptrion": "Create airports requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadBookings",
+   "descriptrion": "Read bookings requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteBookings",
+   "descriptrion": "Delete bookings requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateBookings",
+   "descriptrion": "Put Patch bookings requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateBookings",
+   "descriptrion": "Create bookings requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadBookingsCustomers",
+   "descriptrion": "Read bookingsCustomers requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteBookingsCustomers",
+   "descriptrion": "Delete bookingsCustomers requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateBookingsCustomers",
+   "descriptrion": "Put Patch bookingsCustomers requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateBookingsCustomers",
+   "descriptrion": "Create bookingsCustomers requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadCities",
+   "descriptrion": "Read cities requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteCities",
+   "descriptrion": "Delete cities requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateCities",
+   "descriptrion": "Put Patch cities requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateCities",
+   "descriptrion": "Create cities requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadFlights",
+   "descriptrion": "Read flights requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteFlights",
+   "descriptrion": "Delete flights requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateFlights",
+   "descriptrion": "Put Patch flights requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateFlights",
+   "descriptrion": "Create flights requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadPayments",
+   "descriptrion": "Read payments requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeletePayments",
+   "descriptrion": "Delete payments requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdatePayments",
+   "descriptrion": "Put Patch payments requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreatePayments",
+   "descriptrion": "Create payments requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadRoutes",
+   "descriptrion": "Read routes requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteRoutes",
+   "descriptrion": "Delete routes requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateRoutes",
+   "descriptrion": "Put Patch routes requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateRoutes",
+   "descriptrion": "Create routes requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadSeatReservations",
+   "descriptrion": "Read seatReservations requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteSeatReservations",
+   "descriptrion": "Delete seatReservations requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateSeatReservations",
+   "descriptrion": "Put Patch seatReservations requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateSeatReservations",
+   "descriptrion": "Create seatReservations requests"
+  },
+  {
+   "name": "$XSAPPNAME.ReadTickets",
+   "descriptrion": "Read Tickets requests"
+  },
+  {
+   "name": "$XSAPPNAME.DeleteTickets",
+   "descriptrion": "Delete Tickets requests"
+  },
+  {
+   "name": "$XSAPPNAME.UpdateTickets",
+   "descriptrion": "Put Patch Tickets requests"
+  },
+  {
+   "name": "$XSAPPNAME.CreateTickets",
+   "descriptrion": "Create Tickets requests"
+  }
+ ],
+ "attributes": [],
+ "role-templates": [
+  {
+   "name": "Passenger",
+   "description": "Basic application access",
+   "scope-references": [
+    "$XSAPPNAME.ReadCustomers",
+    "$XSAPPNAME.UpdateCustomers",
+    "$XSAPPNAME.DeleteCustomers",
+    "$XSAPPNAME.CreateCustomers",
+    "$XSAPPNAME.ReadFlights",
+    "$XSAPPNAME.ReadRoutes",
+    "$XSAPPNAME.ReadAirports",
+    "$XSAPPNAME.CreateBookings",
+    "$XSAPPNAME.CreateTickets",
+    "$XSAPPNAME.ReadSeatReservations",
+    "$XSAPPNAME.DeleteSeatReservations",
+    "$XSAPPNAME.UpdateSeatReservations",
+    "$XSAPPNAME.CreateSeatReservations"
+   ]
+  },
+  {
+   "name": "BookingAgent",
+   "description": "Employee, who works with Bookings and Passengers",
+   "scope-references": [
+    "$XSAPPNAME.UpdateCustomers",
+    "$XSAPPNAME.CreateBookings",
+    "$XSAPPNAME.ReadBookings",
+    "$XSAPPNAME.DeleteBookings",
+    "$XSAPPNAME.UpdateBookings",
+    "$XSAPPNAME.CreateBookings",
+    "$XSAPPNAME.ReadBookingsCustomers",
+    "$XSAPPNAME.DeleteBookingsCustomers",
+    "$XSAPPNAME.UpdateBookingsCustomers",
+    "$XSAPPNAME.CreateBookingsCustomers",
+    "$XSAPPNAME.ReadTickets",
+    "$XSAPPNAME.DeleteTickets",
+    "$XSAPPNAME.UpdateTickets",
+    "$XSAPPNAME.CreateTickets",
+    "$XSAPPNAME.ReadSeatReservations",
+    "$XSAPPNAME.DeleteSeatReservations",
+    "$XSAPPNAME.UpdateSeatReservations",
+    "$XSAPPNAME.CreateSeatReservations",
+    "$XSAPPNAME.ReadFlights",
+    "$XSAPPNAME.ReadRoutes",
+    "$XSAPPNAME.ReadAircraftSeats",
+    "$XSAPPNAME.ReadPayments"
+   ]
+  },
+  {
+   "name": "FlightOperator",
+   "description": "Employee, who operates with Flights",
+   "scope-references": [
+    "$XSAPPNAME.ReadFlights",
+    "$XSAPPNAME.DeleteFlights",
+    "$XSAPPNAME.UpdateFlights",
+    "$XSAPPNAME.CreateFlights",
+    "$XSAPPNAME.ReadRoutes",
+    "$XSAPPNAME.ReadAirports",
+    "$XSAPPNAME.ReadAircrafts",
+    "$XSAPPNAME.ReadSeatReservations"
+   ]
+  },
+  {
+   "name": "FinanceManager",
+   "description": "Employee, which works with payments",
+   "scope-references": [
+    "$XSAPPNAME.ReadBookings",
+    "$XSAPPNAME.ReadTickets",
+    "$XSAPPNAME.ReadPayments",
+    "$XSAPPNAME.UpdatePayments",
+    "$XSAPPNAME.DeletePayments",
+    "$XSAPPNAME.CreatePayments",
+    "$XSAPPNAME.ReadCustomers",
+    "$XSAPPNAME.ReadTickets"
+   ]
+  },
+  {
+   "name": "BusinessAdministrator",
+   "description": "Main person. Has all grants",
+   "scope-references": [
+    "$XSAPPNAME.ReadCustomers",
+    "$XSAPPNAME.UpdateCustomers",
+    "$XSAPPNAME.DeleteCustomers",
+    "$XSAPPNAME.CreateCustomers",
+    "$XSAPPNAME.ReadAircraftModels",
+    "$XSAPPNAME.UpdateAircraftModels",
+    "$XSAPPNAME.DeleteAircraftModels",
+    "$XSAPPNAME.CreateAircraftModels",
+    "$XSAPPNAME.ReadAircrafts",
+    "$XSAPPNAME.DeleteAircrafts",
+    "$XSAPPNAME.UpdateAircrafts",
+    "$XSAPPNAME.CreateAircrafts",
+    "$XSAPPNAME.ReadAircraftSeats",
+    "$XSAPPNAME.DeleteAircraftSeats",
+    "$XSAPPNAME.UpdateAircraftSeats",
+    "$XSAPPNAME.CreateAircraftSeats",
+    "$XSAPPNAME.ReadAirports",
+    "$XSAPPNAME.DeleteAirports",
+    "$XSAPPNAME.UpdateAirports",
+    "$XSAPPNAME.CreateAirports",
+    "$XSAPPNAME.ReadBookings",
+    "$XSAPPNAME.DeleteBookings",
+    "$XSAPPNAME.UpdateBookings",
+    "$XSAPPNAME.CreateBookings",
+    "$XSAPPNAME.ReadBookingsCustomers",
+    "$XSAPPNAME.DeleteBookingsCustomers",
+    "$XSAPPNAME.UpdateBookingsCustomers",
+    "$XSAPPNAME.CreateBookingsCustomers",
+    "$XSAPPNAME.ReadCities",
+    "$XSAPPNAME.DeleteCities",
+    "$XSAPPNAME.UpdateCities",
+    "$XSAPPNAME.CreateCities",
+    "$XSAPPNAME.ReadFlights",
+    "$XSAPPNAME.DeleteFlights",
+    "$XSAPPNAME.UpdateFlights",
+    "$XSAPPNAME.CreateFlights",
+    "$XSAPPNAME.ReadPayments",
+    "$XSAPPNAME.DeletePayments",
+    "$XSAPPNAME.UpdatePayments",
+    "$XSAPPNAME.CreatePayments",
+    "$XSAPPNAME.ReadRoutes",
+    "$XSAPPNAME.DeleteRoutes",
+    "$XSAPPNAME.UpdateRoutes",
+    "$XSAPPNAME.CreateRoutes",
+    "$XSAPPNAME.ReadSeatReservations",
+    "$XSAPPNAME.DeleteSeatReservations",
+    "$XSAPPNAME.UpdateSeatReservations",
+    "$XSAPPNAME.CreateSeatReservations",
+    "$XSAPPNAME.ReadTickets",
+    "$XSAPPNAME.DeleteTickets",
+    "$XSAPPNAME.UpdateTickets",
+    "$XSAPPNAME.CreateTickets"
+   ]
+  }
+ ]
+}
