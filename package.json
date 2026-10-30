@@ -9,12 +9,13 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts}": "eslint --fix",
+    "*.ts": "eslint --fix",
     "*.cds": "format-cds -f"
   },
   "dependencies": {
     "@sap/cds": "^10.1.1",
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-typer": ">=0.1",
@@ -42,5 +43,12 @@
     "esbuild@0.28.2": true,
     "fsevents@2.3.3": true,
     "unrs-resolver@1.12.2": true
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    }
   }
 }
