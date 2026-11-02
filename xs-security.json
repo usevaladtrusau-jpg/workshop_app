@@ -3,211 +3,211 @@
  "scopes": [
   {
    "name": "$XSAPPNAME.ReadCustomers",
-   "descriptrion": "Get customers requests"
+   "description": "Get customers requests"
   },
   {
    "name": "$XSAPPNAME.UpdateCustomers",
-   "descriptrion": "Put Patch customers requests"
+   "description": "Put Patch customers requests"
   },
   {
    "name": "$XSAPPNAME.DeleteCustomers",
-   "descriptrion": "Delete customers requests"
+   "description": "Delete customers requests"
   },
   {
    "name": "$XSAPPNAME.CreateCustomers",
-   "descriptrion": "Create customer requests"
+   "description": "Create customer requests"
   },
   {
    "name": "$XSAPPNAME.ReadAircraftModels",
-   "descriptrion": "Read aircraft models requests"
+   "description": "Read aircraft models requests"
   },
   {
    "name": "$XSAPPNAME.UpdateAircraftModels",
-   "descriptrion": "Put Patch aircraft models requests"
+   "description": "Put Patch aircraft models requests"
   },
   {
    "name": "$XSAPPNAME.DeleteAircraftModels",
-   "descriptrion": "Delete aircraft models requests"
+   "description": "Delete aircraft models requests"
   },
   {
    "name": "$XSAPPNAME.CreateAircraftModels",
-   "descriptrion": "Create aircraft models requests"
+   "description": "Create aircraft models requests"
   },
   {
    "name": "$XSAPPNAME.ReadAircrafts",
-   "descriptrion": "Read aircraft requests"
+   "description": "Read aircraft requests"
   },
   {
    "name": "$XSAPPNAME.DeleteAircrafts",
-   "descriptrion": "Delete aircraft requests"
+   "description": "Delete aircraft requests"
   },
   {
    "name": "$XSAPPNAME.UpdateAircrafts",
-   "descriptrion": "Put Patch aircraft requests"
+   "description": "Put Patch aircraft requests"
   },
   {
    "name": "$XSAPPNAME.CreateAircrafts",
-   "descriptrion": "Create aircraft requests"
+   "description": "Create aircraft requests"
   },
   {
    "name": "$XSAPPNAME.ReadAircraftSeats",
-   "descriptrion": "Read aircraft seats requests"
+   "description": "Read aircraft seats requests"
   },
   {
    "name": "$XSAPPNAME.DeleteAircraftSeats",
-   "descriptrion": "Delete aircraft seats requests"
+   "description": "Delete aircraft seats requests"
   },
   {
    "name": "$XSAPPNAME.UpdateAircraftSeats",
-   "descriptrion": "Put Patch aircraft seats requests"
+   "description": "Put Patch aircraft seats requests"
   },
   {
    "name": "$XSAPPNAME.CreateAircraftSeats",
-   "descriptrion": "Create aircraft seats requests"
+   "description": "Create aircraft seats requests"
   },
   {
    "name": "$XSAPPNAME.ReadAirports",
-   "descriptrion": "Read airports requests"
+   "description": "Read airports requests"
   },
   {
    "name": "$XSAPPNAME.DeleteAirports",
-   "descriptrion": "Delete airports requests"
+   "description": "Delete airports requests"
   },
   {
    "name": "$XSAPPNAME.UpdateAirports",
-   "descriptrion": "Put Patch airports requests"
+   "description": "Put Patch airports requests"
   },
   {
    "name": "$XSAPPNAME.CreateAirports",
-   "descriptrion": "Create airports requests"
+   "description": "Create airports requests"
   },
   {
    "name": "$XSAPPNAME.ReadBookings",
-   "descriptrion": "Read bookings requests"
+   "description": "Read bookings requests"
   },
   {
    "name": "$XSAPPNAME.DeleteBookings",
-   "descriptrion": "Delete bookings requests"
+   "description": "Delete bookings requests"
   },
   {
    "name": "$XSAPPNAME.UpdateBookings",
-   "descriptrion": "Put Patch bookings requests"
+   "description": "Put Patch bookings requests"
   },
   {
    "name": "$XSAPPNAME.CreateBookings",
-   "descriptrion": "Create bookings requests"
+   "description": "Create bookings requests"
   },
   {
    "name": "$XSAPPNAME.ReadBookingsCustomers",
-   "descriptrion": "Read bookingsCustomers requests"
+   "description": "Read bookingsCustomers requests"
   },
   {
    "name": "$XSAPPNAME.DeleteBookingsCustomers",
-   "descriptrion": "Delete bookingsCustomers requests"
+   "description": "Delete bookingsCustomers requests"
   },
   {
    "name": "$XSAPPNAME.UpdateBookingsCustomers",
-   "descriptrion": "Put Patch bookingsCustomers requests"
+   "description": "Put Patch bookingsCustomers requests"
   },
   {
    "name": "$XSAPPNAME.CreateBookingsCustomers",
-   "descriptrion": "Create bookingsCustomers requests"
+   "description": "Create bookingsCustomers requests"
   },
   {
    "name": "$XSAPPNAME.ReadCities",
-   "descriptrion": "Read cities requests"
+   "description": "Read cities requests"
   },
   {
    "name": "$XSAPPNAME.DeleteCities",
-   "descriptrion": "Delete cities requests"
+   "description": "Delete cities requests"
   },
   {
    "name": "$XSAPPNAME.UpdateCities",
-   "descriptrion": "Put Patch cities requests"
+   "description": "Put Patch cities requests"
   },
   {
    "name": "$XSAPPNAME.CreateCities",
-   "descriptrion": "Create cities requests"
+   "description": "Create cities requests"
   },
   {
    "name": "$XSAPPNAME.ReadFlights",
-   "descriptrion": "Read flights requests"
+   "description": "Read flights requests"
   },
   {
    "name": "$XSAPPNAME.DeleteFlights",
-   "descriptrion": "Delete flights requests"
+   "description": "Delete flights requests"
   },
   {
    "name": "$XSAPPNAME.UpdateFlights",
-   "descriptrion": "Put Patch flights requests"
+   "description": "Put Patch flights requests"
   },
   {
    "name": "$XSAPPNAME.CreateFlights",
-   "descriptrion": "Create flights requests"
+   "description": "Create flights requests"
   },
   {
    "name": "$XSAPPNAME.ReadPayments",
-   "descriptrion": "Read payments requests"
+   "description": "Read payments requests"
   },
   {
    "name": "$XSAPPNAME.DeletePayments",
-   "descriptrion": "Delete payments requests"
+   "description": "Delete payments requests"
   },
   {
    "name": "$XSAPPNAME.UpdatePayments",
-   "descriptrion": "Put Patch payments requests"
+   "description": "Put Patch payments requests"
   },
   {
    "name": "$XSAPPNAME.CreatePayments",
-   "descriptrion": "Create payments requests"
+   "description": "Create payments requests"
   },
   {
    "name": "$XSAPPNAME.ReadRoutes",
-   "descriptrion": "Read routes requests"
+   "description": "Read routes requests"
   },
   {
    "name": "$XSAPPNAME.DeleteRoutes",
-   "descriptrion": "Delete routes requests"
+   "description": "Delete routes requests"
   },
   {
    "name": "$XSAPPNAME.UpdateRoutes",
-   "descriptrion": "Put Patch routes requests"
+   "description": "Put Patch routes requests"
   },
   {
    "name": "$XSAPPNAME.CreateRoutes",
-   "descriptrion": "Create routes requests"
+   "description": "Create routes requests"
   },
   {
    "name": "$XSAPPNAME.ReadSeatReservations",
-   "descriptrion": "Read seatReservations requests"
+   "description": "Read seatReservations requests"
   },
   {
    "name": "$XSAPPNAME.DeleteSeatReservations",
-   "descriptrion": "Delete seatReservations requests"
+   "description": "Delete seatReservations requests"
   },
   {
    "name": "$XSAPPNAME.UpdateSeatReservations",
-   "descriptrion": "Put Patch seatReservations requests"
+   "description": "Put Patch seatReservations requests"
   },
   {
    "name": "$XSAPPNAME.CreateSeatReservations",
-   "descriptrion": "Create seatReservations requests"
+   "description": "Create seatReservations requests"
   },
   {
    "name": "$XSAPPNAME.ReadTickets",
-   "descriptrion": "Read Tickets requests"
+   "description": "Read Tickets requests"
   },
   {
    "name": "$XSAPPNAME.DeleteTickets",
-   "descriptrion": "Delete Tickets requests"
+   "description": "Delete Tickets requests"
   },
   {
    "name": "$XSAPPNAME.UpdateTickets",
-   "descriptrion": "Put Patch Tickets requests"
+   "description": "Put Patch Tickets requests"
   },
   {
    "name": "$XSAPPNAME.CreateTickets",
-   "descriptrion": "Create Tickets requests"
+   "description": "Create Tickets requests"
   }
  ],
  "attributes": [],
