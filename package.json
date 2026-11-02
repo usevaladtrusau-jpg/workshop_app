@@ -49,5 +49,11 @@
     "fsevents@2.3.3": true,
     "unrs-resolver@1.12.2": true,
     "mbt@1.2.50": true
+  },
+  "cds": {
+    "requires": {
+      "html5-repo": true,
+      "portal": true
+    }
   }
 }
