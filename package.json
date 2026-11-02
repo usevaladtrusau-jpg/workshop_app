@@ -13,15 +13,17 @@
     "*.cds": "format-cds -f"
   },
   "dependencies": {
+    "@cap-js/hana": "^3",
     "@sap/cds": "^10.1.1",
-    "express": "^5.3.0",
-    "@sap/xssec": "^4"
+    "@sap/xssec": "^4",
+    "express": "^5.3.0"
   },
   "devDependencies": {
     "@cap-js/cds-typer": ">=0.1",
     "@cap-js/cds-types": "^0.18.0",
     "@cap-js/sqlite": "^3.1.2",
     "@eslint/js": "^10.0.1",
+    "@sap/cds-dk": "^10.2.0",
     "@sap/cds-lsp": "^10.2.1",
     "@types/node": "^24.0.0",
     "eslint": "^10.13.0",
@@ -32,6 +34,7 @@
     "globals": "^17.13.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
+    "mbt": "^1.2.50",
     "tsx": "^4",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.0"
@@ -42,13 +45,7 @@
   "allowScripts": {
     "esbuild@0.28.2": true,
     "fsevents@2.3.3": true,
-    "unrs-resolver@1.12.2": true
-  },
-  "cds": {
-    "requires": {
-      "[production]": {
-        "auth": "xsuaa"
-      }
-    }
+    "unrs-resolver@1.12.2": true,
+    "mbt@1.2.50": true
   }
 }

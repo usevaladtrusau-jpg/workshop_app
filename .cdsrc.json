@@ -2,13 +2,22 @@
     "features": {
       "assert_integrity": "db"
     },
-
     "requires": {
+        "[production]": {
+        "auth": "xsuaa"
+      },
       "db": {
-        "kind": "sqlite",
-        "impl": "@cap-js/sqlite",
-        "credentials": {
-          "url": "sqlite.db"
+        "[development]": {
+          "kind": "sqlite",
+          "impl": "@cap-js/sqlite",
+          "credentials": {
+            "url": "sqlite.db"
+          }
+        },
+        "[production]": {
+          "db": {
+            "kind": "hana"
+          }
         }
       }
     }
