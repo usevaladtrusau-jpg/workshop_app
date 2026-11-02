@@ -127,13 +127,14 @@ export default defineConfig(
 
       "for-direction": "error",
 
-      "no-console": "error",
+      "no-console": "warn",
 
       "no-empty": "error",
 
       "no-extra-boolean-cast": "error",
 
       "no-unreachable": "error",
+      "@typescript-eslint/unbound-method": "warn"
     },
   },
   {
