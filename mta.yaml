@@ -4,7 +4,6 @@ version: 1.0.0
 description: "A simple CAP project."
 parameters:
   enable-parallel-deployments: true
-  deploy_mode: html5-repo
 build-parameters:
   before-all:
     - builder: custom
@@ -50,27 +49,11 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
       - name: workshop_app-auth
-      - name: workshop_app-html5-runtime
-      - name: workshop_app-portal
     provides:
       - name: app-api
         properties:
           app-protocol: ${protocol}
           app-uri: ${default-uri}
-
-  - name: workshop_app-portal-deployer
-    type: com.sap.application.content
-    path: app/portal
-    requires:
-      - name: workshop_app-portal
-        parameters:
-          content-target: true
-          service-key:
-            name: workshop_app-portal-key
-            config:
-              content-endpoint: developer
-      - name: workshop_app-auth
-      - name: workshop_app-html5-repo-host
 
 resources:
   - name: workshop_app-auth
@@ -116,19 +99,3 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
-
-  - name: workshop_app-html5-repo-host
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: html5-apps-repo
-      service-plan: app-host
-  - name: workshop_app-html5-runtime
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: html5-apps-repo
-      service-plan: app-runtime
-  - name: workshop_app-portal
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: portal
-      service-plan: standard

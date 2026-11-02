@@ -1,6 +1,5 @@
 {
  "xsappname": "airline",
- "tenant-mode": "dedicated",
  "scopes": [
   {
    "name": "$XSAPPNAME.ReadCustomers",
@@ -211,11 +210,6 @@
    "description": "Create Tickets requests"
   }
  ],
- "oauth2-configuration": {
-  "redirect-uris": [
-   "https://242bc7b5trial-dev-workshop-app.cfapps.us10-001.hana.ondemand.com/**"
-  ]
- },
  "attributes": [],
  "role-templates": [
   {

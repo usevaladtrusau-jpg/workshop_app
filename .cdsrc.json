@@ -1,22 +1,24 @@
 {
-  "features": {
-    "assert_integrity": "db"
-  },
-  "requires": {
-    "auth": {
-      "[production]": "xsuaa"
+    "features": {
+      "assert_integrity": "db"
     },
-    "db": {
-      "[development]": {
-        "kind": "sqlite",
-        "impl": "@cap-js/sqlite",
-        "credentials": {
-          "url": "sqlite.db"
-        }
+    "requires": {
+        "[production]": {
+        "auth": "xsuaa"
       },
-      "[production]": {
-        "kind": "hana"
+      "db": {
+        "[development]": {
+          "kind": "sqlite",
+          "impl": "@cap-js/sqlite",
+          "credentials": {
+            "url": "sqlite.db"
+          }
+        },
+        "[production]": {
+          "db": {
+            "kind": "hana"
+          }
+        }
       }
     }
-  }
 }
