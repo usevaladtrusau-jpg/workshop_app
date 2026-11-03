@@ -1,6 +1,6 @@
 using {AirlineService} from '../airline-service';
 
-annotate AirlineService.Aircrafts with @restrict: [
+annotate AirlineService.Airports with @restrict: [
   {
     grant: 'READ',
     to   : ['ReadAirports']

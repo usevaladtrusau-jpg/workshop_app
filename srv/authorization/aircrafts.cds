@@ -3,18 +3,18 @@ using {AirlineService} from '../airline-service';
 annotate AirlineService.Aircrafts with @restrict: [
   {
     grant: 'READ',
-    to   : ['ReadAircraftModels']
+    to   : ['ReadAircrafts']
   },
   {
     grant: 'UPDATE',
-    to   : ['UpdateAircraftModels']
+    to   : ['UpdateAircrafts']
   },
   {
     grant: 'DELETE',
-    to   : ['DeleteAircraftModels']
+    to   : ['DeleteAircrafts']
   },
   {
     grant: 'CREATE',
-    to   : ['CreateAircraftModels']
+    to   : ['CreateAircrafts']
   }
 ]
