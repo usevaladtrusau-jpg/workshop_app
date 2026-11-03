@@ -3,8 +3,15 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/(.*)$",
-      "target": "$1",
+      "source": "^/ias/(.*)$",
+      "target": "/$1",
+      "destination": "srv-api",
+      "authenticationType": "ias",
+      "csrfProtection": true
+    },
+    {
+      "source": "^/xsuaa/(.*)$",
+      "target": "/$1",
       "destination": "srv-api",
       "authenticationType": "xsuaa",
       "csrfProtection": true
