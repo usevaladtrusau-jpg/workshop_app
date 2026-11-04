@@ -7,8 +7,7 @@
     "format:cds": "format-cds -f .",
     "format:cds:check": "format-cds --check .",
     "check": "npm run lint && npm run format:cds:check",
-    "prepare": "husky || true",
-    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "prepare": "husky || true"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",
@@ -42,8 +41,7 @@
     "mbt": "^1.2.50",
     "tsx": "^4",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.72.0",
-    "cds-plugin-ui5": "^0.17.0"
+    "typescript-eslint": "^8.72.0"
   },
   "imports": {
     "#cds-models/*": "./@cds-models/*/index.js"
@@ -56,11 +54,5 @@
   },
   "engines": {
     "node": "^24"
-  },
-  "workspaces": [
-    "app/*"
-  ],
-  "sapux": [
-    "app/project1"
-  ]
+  }
 }
