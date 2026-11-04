@@ -1,6 +1,6 @@
 
 _schema-version: 3.3.0
-ID: workshop_app
+ID: airline-app
 version: 1.0.0
 description: "A simple CAP project."
 
@@ -16,7 +16,7 @@ build-parameters:
 
 modules:
 
-  - name: workshop_app-srv
+  - name: airline-app-srv
     type: nodejs
     path: gen/srv
 
@@ -37,23 +37,23 @@ modules:
           srv-cert-url: '${protocol}://${default-host}.cert.${default-domain}'
 
     requires:
-      - name: workshop_app-auth
-      - name: workshop_app-ias
+      - name: airline-app-auth
+      - name: airline-app-ias
         parameters:
           config:
             credential-type: X509_GENERATED
             app-identifier: srv
 
-      - name: workshop_app-db
+      - name: airline-app-db
 
     deployed-after:
-      - workshop_app-ams-policies-deployer
+      - airline-app-ams-policies-deployer
 
     properties:
       AMS_DCL_ROOT: ams/dcl
 
 
-  - name: workshop_app-db-deployer
+  - name: airline-app-db-deployer
     type: hdb
     path: gen/db
 
@@ -61,10 +61,10 @@ modules:
       buildpack: nodejs_buildpack
 
     requires:
-      - name: workshop_app-db
+      - name: airline-app-db
 
 
-  - name: workshop_app
+  - name: airline-app
     type: approuter.nodejs
     path: .deploy/app-router
 
@@ -83,9 +83,9 @@ modules:
           forwardAuthCertificates: true
           strictSSL: true
 
-      - name: workshop_app-auth
+      - name: airline-app-auth
 
-      - name: workshop_app-ias
+      - name: airline-app-ias
         parameters:
           config:
             credential-type: X509_GENERATED
@@ -98,7 +98,7 @@ modules:
           app-uri: ${default-uri}
 
 
-  - name: workshop_app-ams-policies-deployer
+  - name: airline-app-ams-policies-deployer
     type: javascript.nodejs
     path: gen/policies
 
@@ -112,7 +112,7 @@ modules:
           memory: 512M
 
     requires:
-      - name: workshop_app-ias
+      - name: airline-app-ias
         parameters:
           config:
             credential-type: X509_GENERATED
@@ -121,7 +121,7 @@ modules:
 
 resources:
 
-  - name: workshop_app-auth
+  - name: airline-app-auth
     type: org.cloudfoundry.managed-service
 
     parameters:
@@ -130,7 +130,7 @@ resources:
       path: ./xs-security.json
 
       config:
-        xsappname: workshop_app-${org}-${space}
+        xsappname: airline-app-${org}-${space}
         tenant-mode: dedicated
 
         oauth2-configuration:
@@ -141,27 +141,27 @@ resources:
             - https://*~{app-api/app-uri}/**
 
         role-collections:
-          - name: 'Passenger (workshop_app ${org}-${space})'
+          - name: 'Passenger (airline-app ${org}-${space})'
             description: 'generated'
             role-template-references:
               - '$XSAPPNAME.Passenger'
 
-          - name: 'BookingAgent (workshop_app ${org}-${space})'
+          - name: 'BookingAgent (airline-app ${org}-${space})'
             description: 'generated'
             role-template-references:
               - '$XSAPPNAME.BookingAgent'
 
-          - name: 'FlightOperator (workshop_app ${org}-${space})'
+          - name: 'FlightOperator (airline-app ${org}-${space})'
             description: 'generated'
             role-template-references:
               - '$XSAPPNAME.FlightOperator'
 
-          - name: 'FinanceManager (workshop_app ${org}-${space})'
+          - name: 'FinanceManager (airline-app ${org}-${space})'
             description: 'generated'
             role-template-references:
               - '$XSAPPNAME.FinanceManager'
 
-          - name: 'BusinessAdministrator (workshop_app ${org}-${space})'
+          - name: 'BusinessAdministrator (airline-app ${org}-${space})'
             description: 'generated'
             role-template-references:
               - '$XSAPPNAME.BusinessAdministrator'
@@ -170,7 +170,7 @@ resources:
       - name: app-api
 
 
-  - name: workshop_app-db
+  - name: airline-app-db
     type: com.sap.xs.hdi-container
 
     parameters:
@@ -178,19 +178,19 @@ resources:
       service-plan: hdi-shared
 
 
-  - name: workshop_app-ias
+  - name: airline-app-ias
     type: org.cloudfoundry.managed-service
 
     parameters:
       service: identity
-      service-name: workshop_app-ias
+      service-name: airline-app-ias
       service-plan: application
 
       config:
-        display-name: workshop_app
+        display-name: airline-app
 
         provided-apis:
-          - name: workshop_app-ias-api
+          - name: airline-app-ias-api
             description: API exposed by the application
 
         oauth2-configuration:
