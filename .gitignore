@@ -1,3 +1,4 @@
+app/airline-ui/dist/**/*
 .vscode/
 node_modules/
 target/
