@@ -1,4 +1,5 @@
 {
+  "name": "airline-app",
   "scripts": {
     "start": "cds-serve",
     "start:dev": "cds watch",
@@ -62,5 +63,10 @@
   ],
   "sapux": [
     "app/airline-ui"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "html5-repo": true
+    }
+  }
 }
