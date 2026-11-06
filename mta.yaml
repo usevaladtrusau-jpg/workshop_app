@@ -80,6 +80,7 @@ modules:
           forwardAuthToken: true
           forwardAuthCertificates: true
           strictSSL: true
+          HTML5.IASDependencyName: airline-app-ias-api
 
       - name: airline-app-auth
 
