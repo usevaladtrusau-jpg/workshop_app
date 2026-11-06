@@ -1,13 +1,18 @@
+import { TicketRepository } from "../repositories/ticket-repositories";
 import { DestinationService } from "../utils/destination.service";
 
 export class PaymentHandler {
-  public async executePayment() {
+  private readonly ticketRepository: TicketRepository = new TicketRepository();
+
+  public async executePayment(ticketId: string) {
+    await this.checkTicket(ticketId);
+
     const destinationService = new DestinationService("StripeApi");
 
     const body = new URLSearchParams({
       mode: "payment",
-      success_url: "http://localhost:4004/odata/v4/PaymentService/success",
-      cancel_url: "http://localhost:4004/odata/v4/PaymentService/cancel",
+      success_url: "http://localhost:4004/odata/v4/Payment/success",
+      cancel_url: "http://localhost:4004/odata/v4/Payment/cancel",
       "metadata[orderId]": "ORDER-12345",
       "line_items[0][quantity]": "1",
       "line_items[0][price_data][currency]": "usd",
@@ -23,5 +28,13 @@ export class PaymentHandler {
     );
 
     return response.url;
+  }
+
+  public async checkTicket(ticketId: string) {
+    const ticket = await this.ticketRepository.getTicketById(ticketId);
+
+    if (!ticket) {
+      throw new Error("Ticket with provided id was not found.");
+    }
   }
 }

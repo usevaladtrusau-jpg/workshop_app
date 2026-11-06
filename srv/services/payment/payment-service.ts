@@ -6,6 +6,8 @@ export class PaymentService extends ApplicationService {
   private readonly paymentHandler: PaymentHandler = new PaymentHandler();
   async init() {
     this.on("makePayment", this.paymentAction);
+    this.on("success", this.successFunction);
+    this.on("cancel", this.cancelFunction);
 
     await super.init();
   }
@@ -13,7 +15,14 @@ export class PaymentService extends ApplicationService {
   public async paymentAction(req: Request) {
     const { ticketId } = req.data;
 
-    const paymentUrl = await this.paymentHandler.executePayment();
-    console.log("PAYMENT URL", paymentUrl, ticketId);
+    return await this.paymentHandler.executePayment(ticketId);
+  }
+
+  public successFunction() {
+    return "You have paid successfully.";
+  }
+
+  public cancelFunction() {
+    return "Something went wrong";
   }
 }
