@@ -1,0 +1,12 @@
+---
+stages:
+  build:
+    buildTool: "mta"
+    buildDescriptor: "mta.yaml"
+
+  release:
+    cfDeploy:
+      apiEndpoint: "https://api.cf.us10-001.hana.ondemand.com/"
+      org: "35e78241trial"
+      space: "dev"
+      credential: "airline-cf-deploy"
