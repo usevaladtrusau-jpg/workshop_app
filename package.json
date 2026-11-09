@@ -6,7 +6,8 @@
     "format:cds": "format-cds -f .",
     "format:cds:check": "format-cds --check .",
     "check": "npm run lint && npm run format:cds:check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "types": "cds-typer \"*\" --outputDirectory @cds-models"
   },
   "lint-staged": {
     "*.{ts}": "eslint --fix",
