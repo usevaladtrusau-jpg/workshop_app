@@ -29,7 +29,9 @@ cds.once("bootstrap", (app) => {
         }
       }
 
-      res.json({ metadata, paymentId, price });
+      const ticketId = metadata!.orderId;
+
+      res.json({ ticketId, paymentId, price });
     },
   );
 });

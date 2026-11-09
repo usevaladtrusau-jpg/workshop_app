@@ -13,7 +13,7 @@ export class PaymentHandler {
       mode: "payment",
       success_url: "http://localhost:4004/odata/v4/Payment/success",
       cancel_url: "http://localhost:4004/odata/v4/Payment/cancel",
-      "metadata[orderId]": "ORDER-12345",
+      "metadata[orderId]": ticketId,
       "line_items[0][quantity]": "1",
       "line_items[0][price_data][currency]": "usd",
       "line_items[0][price_data][unit_amount]": "1000",
