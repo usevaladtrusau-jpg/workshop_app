@@ -26,7 +26,7 @@
         "./@cds-models/*"
       ]
     },
-    "outDir": "./build",
+    "outDir": "./gen/srv",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -34,5 +34,10 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+    "exclude": [
+    "app",
+    "gen",
+    "node_modules"
+  ]
 }

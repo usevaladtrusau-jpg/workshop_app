@@ -1,4 +1,6 @@
 using from './authorization/authorization-main';
+using from './services/secrets/secrets-service';
+
 using {airline as al} from '../db/schema';
 
 @requires: 'any'
