@@ -73,6 +73,7 @@ export default defineConfig(
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
 
       semi: ["error", "always"],
 
@@ -127,7 +128,7 @@ export default defineConfig(
 
       "for-direction": "error",
 
-      "no-console": "warn",
+      "no-console": "error",
 
       "no-empty": "error",
 

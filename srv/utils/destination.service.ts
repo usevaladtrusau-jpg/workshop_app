@@ -61,7 +61,6 @@ export class DestinationService {
       throw new Error(`${response.status} ${response.statusText}`);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return response.data;
   }
 }
