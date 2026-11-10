@@ -7,8 +7,6 @@ using {
 } from '@sap/cds/common';
 using airline.db.Customers from './customers';
 using airline.db.BookingsCustomers from './bookingsCustomers';
-using airline.db.Tickets from './tickets';
-using airline.db.Payments from './payments';
 
 type BookingStatuses : String enum {
   Pending;
@@ -30,8 +28,4 @@ entity Bookings : cuid, managed {
 
   bookingsCustomers : Association to many BookingsCustomers
                         on bookingsCustomers.booking = $self;
-  tickets           : Association to many Tickets
-                        on tickets.booking = $self;
-  payments          : Association to many Payments
-                        on payments.booking = $self;
 }
