@@ -45,6 +45,7 @@ modules:
             app-identifier: srv
 
       - name: airline-app-db
+      - name: airline-credentials-store
 
     deployed-after:
       - airline-app-ams-policies-deployer
@@ -248,3 +249,8 @@ resources:
     parameters:
       service: html5-apps-repo
       service-plan: app-runtime
+
+  - name: airline-credentials-store
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: airline-credentials-store
