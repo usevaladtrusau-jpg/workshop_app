@@ -7,7 +7,8 @@
     "format:cds": "format-cds -f .",
     "format:cds:check": "format-cds --check .",
     "check": "npm run lint && npm run format:cds:check",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "types": "cds-typer \"*\" --outputDirectory @cds-models"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",
@@ -19,7 +20,10 @@
     "@sap/cds": "^10.1.1",
     "@sap/hdi-deploy": "^5.5.0",
     "@sap/xssec": "^4",
-    "express": "^5.3.0"
+    "@sap-cloud-sdk/connectivity": "^4.9.1",
+    "@sap-cloud-sdk/http-client": "^4.9.1",
+    "express": "^5.3.0",
+    "stripe": "^23.1.0"
   },
   "devDependencies": {
     "@cap-js/cds-typer": ">=0.1",
@@ -54,5 +58,17 @@
   },
   "engines": {
     "node": "^24"
+  },
+  "cds": {
+    "requires": {
+      "[development]": {
+        "StripeApi": {
+          "kind": "rest",
+          "credentials": {
+            "url": "https://api.stripe.com"
+          }
+        }
+      }
+    }
   }
 }
