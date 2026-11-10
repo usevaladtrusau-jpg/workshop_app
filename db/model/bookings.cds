@@ -7,8 +7,6 @@ using {
 } from '@sap/cds/common';
 using airline.db.Customers from './customers';
 using airline.db.BookingsCustomers from './bookingsCustomers';
-using airline.db.Tickets from './tickets';
-using airline.db.Payments from './payments';
 
 type BookingStatuses : String enum {
   Pending;
