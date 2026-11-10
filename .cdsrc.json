@@ -9,6 +9,19 @@
         "kind": "hana"
       }
     },
+    "[development]": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "secrets-user": {
+            "password": "secrets123",
+            "roles": [
+              "ReadSecrets"
+            ]
+          }
+        }
+      }
+    },
     "xsuaa": true,
     "db": {
       "[development]": {

@@ -64,6 +64,8 @@ POLICY FinanceManager {
 }
 
 POLICY BusinessAdministrator {
+    ASSIGN ROLE ReadSecrets;
+
     ASSIGN ROLE ReadCustomers;
     ASSIGN ROLE UpdateCustomers;
     ASSIGN ROLE DeleteCustomers;
@@ -128,4 +130,8 @@ POLICY BusinessAdministrator {
     ASSIGN ROLE DeleteTickets;
     ASSIGN ROLE UpdateTickets;
     ASSIGN ROLE CreateTickets;
+}
+
+POLICY SecretsRole {
+    ASSIGN ROLE ReadSecrets;
 }

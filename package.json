@@ -1,6 +1,8 @@
 {
   "name": "airline-app",
   "scripts": {
+    "build": "tsc --noEmit",
+    "build:cds": "cds build --production",
     "start": "cds-serve",
     "start:dev": "cds watch",
     "lint": "eslint .",
@@ -21,17 +23,20 @@
     "@sap/cds": "^10.1.1",
     "@sap/hdi-deploy": "^5.5.0",
     "@sap/xssec": "^4",
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "node-jose": "^2.2.0"
   },
   "devDependencies": {
-    "@cap-js/cds-typer": ">=0.1",
+    "@cap-js/cds-typer": "^0.41.1",
     "@cap-js/cds-types": "^0.18.0",
     "@cap-js/sqlite": "^3.1.2",
     "@eslint/js": "^10.0.1",
     "@sap/ams-dev": "^3",
     "@sap/cds-dk": "^10.2.0",
     "@sap/cds-lsp": "^10.2.1",
-    "@types/node": "^24.0.0",
+    "@types/node": "^24.19.2",
+    "@types/node-jose": "^1.1.13",
+    "cds-plugin-ui5": "^0.17.0",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-x": "^4.17.1",
@@ -43,8 +48,7 @@
     "mbt": "^1.2.50",
     "tsx": "^4",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.72.0",
-    "cds-plugin-ui5": "^0.17.0"
+    "typescript-eslint": "^8.72.0"
   },
   "imports": {
     "#cds-models/*": "./@cds-models/*/index.js"
@@ -53,7 +57,8 @@
     "esbuild@0.28.2": true,
     "fsevents@2.3.3": true,
     "unrs-resolver@1.12.2": true,
-    "mbt@1.2.50": true
+    "mbt@1.2.50": true,
+    "ui5-tooling-transpile@3.14.0": true
   },
   "engines": {
     "node": "^24"

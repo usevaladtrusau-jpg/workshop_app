@@ -1,6 +1,10 @@
 {
  "xsappname": "airline",
  "scopes": [
+    {
+   "name": "$XSAPPNAME.ReadSecrets",
+   "description": "Just for testing access to credentials store"
+  },
   {
    "name": "$XSAPPNAME.ReadCustomers",
    "description": "Get customers requests"
@@ -291,6 +295,7 @@
    "name": "BusinessAdministrator",
    "description": "Main person. Has all grants",
    "scope-references": [
+    "$XSAPPNAME.ReadSecrets",
     "$XSAPPNAME.ReadCustomers",
     "$XSAPPNAME.UpdateCustomers",
     "$XSAPPNAME.DeleteCustomers",
@@ -343,6 +348,13 @@
     "$XSAPPNAME.DeleteTickets",
     "$XSAPPNAME.UpdateTickets",
     "$XSAPPNAME.CreateTickets"
+   ]
+  },
+  {
+   "name": "SecretsRole",
+   "description": "Role for testing access to credentials store",
+   "scope-references": [
+    "$XSAPPNAME.ReadSecrets"
    ]
   }
  ]
