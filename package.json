@@ -11,6 +11,7 @@
     "format:cds:check": "format-cds --check .",
     "check": "npm run lint && npm run format:cds:check",
     "prepare": "husky || true",
+    "types": "cds-typer \"*\" --outputDirectory @cds-models",
     "watch-airline-ui": "cds watch --open airlineui/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "lint-staged": {
@@ -23,6 +24,9 @@
     "@sap/cds": "^10.1.1",
     "@sap/hdi-deploy": "^5.5.0",
     "@sap/xssec": "^4",
+    "@sap-cloud-sdk/connectivity": "^4.9.1",
+    "@sap-cloud-sdk/http-client": "^4.9.1",
+    "stripe": "^23.1.0",
     "express": "^5.3.0",
     "node-jose": "^2.2.0"
   },
@@ -58,7 +62,7 @@
     "fsevents@2.3.3": true,
     "unrs-resolver@1.12.2": true,
     "mbt@1.2.50": true,
-    "ui5-tooling-transpile@3.14.0": true
+    " ui5-tooling-transpile@3.14.1": true
   },
   "engines": {
     "node": "^24"
@@ -68,10 +72,5 @@
   ],
   "sapux": [
     "app/airline-ui"
-  ],
-  "cds": {
-    "requires": {
-      "html5-repo": true
-    }
-  }
+  ]
 }

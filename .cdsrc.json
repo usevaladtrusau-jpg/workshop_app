@@ -20,17 +20,22 @@
             ]
           }
         }
-      }
-    },
-    "xsuaa": true,
-    "db": {
-      "[development]": {
+      },
+      "StripeApi": {
+        "kind": "rest",
+        "credentials": {
+          "url": "https://api.stripe.com"
+        }
+      },
+      "db": {
         "kind": "sqlite",
         "impl": "@cap-js/sqlite",
         "credentials": {
           "url": "sqlite.db"
         }
       }
-    }
+    },
+    "xsuaa": true,
+    "html5-repo": true
   }
 }
