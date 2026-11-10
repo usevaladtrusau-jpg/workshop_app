@@ -1,6 +1,8 @@
 # Project conventions
  - [Commit agreement](https://github.com/usevaladtrusau-jpg/workshop_app/blob/develop/docs/commit-convention.md)
  - [Database design agreement](https://github.com/usevaladtrusau-jpg/workshop_app/blob/develop/docs/database-design-convention.md)
+ - [Database Schema](https://github.com/usevaladtrusau-jpg/workshop_app/blob/develop/docs/database-schema.md)
+ - [Authentication&Authorization. Roles and Scopes]()
 
 # Versions
 

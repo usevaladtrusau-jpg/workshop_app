@@ -1,10 +1,17 @@
 {
-    "features": {
-      "assert_integrity": "db"
-    },
-
-    "requires": {
+  "features": {
+    "assert_integrity": "db"
+  },
+  "requires": {
+    "[production]": {
+      "auth": "ias",
       "db": {
+        "kind": "hana"
+      }
+    },
+    "xsuaa": true,
+    "db": {
+      "[development]": {
         "kind": "sqlite",
         "impl": "@cap-js/sqlite",
         "credentials": {
@@ -12,4 +19,5 @@
         }
       }
     }
+  }
 }
