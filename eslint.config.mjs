@@ -134,6 +134,8 @@ export default defineConfig(
       "no-extra-boolean-cast": "error",
 
       "no-unreachable": "error",
+
+      "@typescript-eslint/unbound-method": "off"
     },
   },
   {
