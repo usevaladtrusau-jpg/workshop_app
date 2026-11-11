@@ -23,7 +23,7 @@ function journey() {
     QUnit.module("FlightsObjectPageObjectPage journey");
 
     opaTest("Navigate to FlightsObjectPageObjectPage", function (Given: Given, When: When, Then: Then) {
-        Given.iResetMockData({ ServiceUri: "/odata/v4/public-airline/" });
+        Given.iResetMockData({ ServiceUri: "/odata/v4/airline/" });
         Given.iResetTestData();
         Given.iStartMyApp();
         When.onTheFlightsListGenerated.onFilterBar().iExecuteSearch();

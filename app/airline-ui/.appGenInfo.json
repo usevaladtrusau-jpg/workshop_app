@@ -4,7 +4,7 @@
     "generatorPlatform": "Visual Studio Code",
     "serviceType": "Local CAP",
     "metadataFilename": "",
-    "serviceUrl": "http://localhost:4004/odata/v4/public-airline/",
+    "serviceUrl": "http://localhost:4004/odata/v4/airline/",
     "appName": "airline-ui",
     "appTitle": "Airline",
     "appDescription": "Airline UI",
