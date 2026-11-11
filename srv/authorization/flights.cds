@@ -3,7 +3,7 @@ using {AirlineService} from '../airline-service';
 annotate AirlineService.Flights with @restrict: [
   {
     grant: 'READ',
-    to   : ['ReadFlights']
+    to   : ['any']
   },
   {
     grant: 'UPDATE',
