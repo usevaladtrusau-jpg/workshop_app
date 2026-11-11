@@ -1,6 +1,6 @@
 import { ApplicationService, Request } from "@sap/cds";
 
-import { PaymentHandler } from "../../handlers/payment.handler";
+import { PaymentHandler } from "../../handlers/payment/payment-handler";
 
 export class PaymentService extends ApplicationService {
   private readonly paymentHandler: PaymentHandler = new PaymentHandler();

@@ -1,5 +1,5 @@
-import { TicketRepository } from "../repositories/ticket-repositories";
-import { DestinationService } from "../utils/destination.service";
+import { TicketRepository } from "../../repositories/ticket-repositories";
+import { DestinationService } from "../../utils/destination.service";
 
 export class PaymentHandler {
   private readonly ticketRepository: TicketRepository = new TicketRepository();
