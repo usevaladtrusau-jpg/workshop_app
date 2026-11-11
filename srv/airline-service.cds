@@ -1,6 +1,3 @@
-using from './authorization';
-using from './services/secrets/secrets-service';
-
 using {airline as al} from '../db/schema';
 
 service AirlineService {
