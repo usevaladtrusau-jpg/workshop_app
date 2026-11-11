@@ -2,6 +2,11 @@ import cds from "@sap/cds";
 import express from "express";
 import Stripe from "stripe";
 
+import { TicketStatus } from "./srv/handlers/payment/constants";
+import { TicketRepository } from "./srv/repositories/ticket-repositories";
+
+const ticketRepository = new TicketRepository();
+
 cds.once("bootstrap", (app) => {
   app.post(
     "/paymentWebhook",
@@ -30,6 +35,7 @@ cds.once("bootstrap", (app) => {
       }
 
       const ticketId = metadata!.orderId;
+      ticketRepository.updateTicket(ticketId, { status: TicketStatus.Paid });
 
       res.json({ ticketId, paymentId, price });
     },
