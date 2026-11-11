@@ -134,10 +134,6 @@
    "description": "Create cities requests"
   },
   {
-   "name": "$XSAPPNAME.ReadFlights",
-   "description": "Read flights requests"
-  },
-  {
    "name": "$XSAPPNAME.DeleteFlights",
    "description": "Delete flights requests"
   },
@@ -198,10 +194,6 @@
    "description": "Create seatReservations requests"
   },
   {
-   "name": "$XSAPPNAME.ReadTickets",
-   "description": "Read Tickets requests"
-  },
-  {
    "name": "$XSAPPNAME.DeleteTickets",
    "description": "Delete Tickets requests"
   },
@@ -224,7 +216,6 @@
     "$XSAPPNAME.UpdateCustomers",
     "$XSAPPNAME.DeleteCustomers",
     "$XSAPPNAME.CreateCustomers",
-    "$XSAPPNAME.ReadFlights",
     "$XSAPPNAME.ReadRoutes",
     "$XSAPPNAME.ReadAirports",
     "$XSAPPNAME.CreateBookings",
@@ -249,7 +240,6 @@
     "$XSAPPNAME.DeleteBookingsCustomers",
     "$XSAPPNAME.UpdateBookingsCustomers",
     "$XSAPPNAME.CreateBookingsCustomers",
-    "$XSAPPNAME.ReadTickets",
     "$XSAPPNAME.DeleteTickets",
     "$XSAPPNAME.UpdateTickets",
     "$XSAPPNAME.CreateTickets",
@@ -257,7 +247,6 @@
     "$XSAPPNAME.DeleteSeatReservations",
     "$XSAPPNAME.UpdateSeatReservations",
     "$XSAPPNAME.CreateSeatReservations",
-    "$XSAPPNAME.ReadFlights",
     "$XSAPPNAME.ReadRoutes",
     "$XSAPPNAME.ReadAircraftSeats",
     "$XSAPPNAME.ReadPayments"
@@ -267,7 +256,6 @@
    "name": "FlightOperator",
    "description": "Employee, who operates with Flights",
    "scope-references": [
-    "$XSAPPNAME.ReadFlights",
     "$XSAPPNAME.DeleteFlights",
     "$XSAPPNAME.UpdateFlights",
     "$XSAPPNAME.CreateFlights",
@@ -282,13 +270,11 @@
    "description": "Employee, which works with payments",
    "scope-references": [
     "$XSAPPNAME.ReadBookings",
-    "$XSAPPNAME.ReadTickets",
     "$XSAPPNAME.ReadPayments",
     "$XSAPPNAME.UpdatePayments",
     "$XSAPPNAME.DeletePayments",
     "$XSAPPNAME.CreatePayments",
-    "$XSAPPNAME.ReadCustomers",
-    "$XSAPPNAME.ReadTickets"
+    "$XSAPPNAME.ReadCustomers"
    ]
   },
   {
@@ -328,7 +314,6 @@
     "$XSAPPNAME.DeleteCities",
     "$XSAPPNAME.UpdateCities",
     "$XSAPPNAME.CreateCities",
-    "$XSAPPNAME.ReadFlights",
     "$XSAPPNAME.DeleteFlights",
     "$XSAPPNAME.UpdateFlights",
     "$XSAPPNAME.CreateFlights",
@@ -344,7 +329,6 @@
     "$XSAPPNAME.DeleteSeatReservations",
     "$XSAPPNAME.UpdateSeatReservations",
     "$XSAPPNAME.CreateSeatReservations",
-    "$XSAPPNAME.ReadTickets",
     "$XSAPPNAME.DeleteTickets",
     "$XSAPPNAME.UpdateTickets",
     "$XSAPPNAME.CreateTickets"

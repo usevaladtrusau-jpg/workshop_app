@@ -1,19 +1,5 @@
-using from './authorization/authorization-main';
-using from './services/secrets/secrets-service';
-
 using {airline as al} from '../db/schema';
 
-@requires: 'any'
-service PublicAirlineService {
-
-  @readonly
-  entity Flights as projection on al.db.Flights;
-
-  @readonly
-  entity Tickets as projection on al.db.Tickets;
-}
-
-@requires: 'authenticated-user'
 service AirlineService {
   entity AircraftModels    as projection on al.db.AircraftModels;
   entity Aircrafts         as projection on al.db.Aircrafts;

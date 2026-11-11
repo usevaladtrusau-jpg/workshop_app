@@ -3,7 +3,6 @@ POLICY Passenger {
     ASSIGN ROLE UpdateCustomers;
     ASSIGN ROLE DeleteCustomers;
     ASSIGN ROLE CreateCustomers;
-    ASSIGN ROLE ReadFlights;
     ASSIGN ROLE ReadRoutes;
     ASSIGN ROLE ReadAirports;
     ASSIGN ROLE CreateBookings;
@@ -25,7 +24,6 @@ POLICY BookingAgent {
     ASSIGN ROLE DeleteBookingsCustomers;
     ASSIGN ROLE UpdateBookingsCustomers;
     ASSIGN ROLE CreateBookingsCustomers;
-    ASSIGN ROLE ReadTickets;
     ASSIGN ROLE DeleteTickets;
     ASSIGN ROLE UpdateTickets;
     ASSIGN ROLE CreateTickets;
@@ -35,14 +33,12 @@ POLICY BookingAgent {
     ASSIGN ROLE UpdateSeatReservations;
     ASSIGN ROLE CreateSeatReservations;
 
-    ASSIGN ROLE ReadFlights;
     ASSIGN ROLE ReadRoutes;
     ASSIGN ROLE ReadAircraftSeats;
     ASSIGN ROLE ReadPayments;
 }
 
 POLICY FlightOperator {
-    ASSIGN ROLE ReadFlights;
     ASSIGN ROLE DeleteFlights;
     ASSIGN ROLE UpdateFlights;
     ASSIGN ROLE CreateFlights;
@@ -54,13 +50,11 @@ POLICY FlightOperator {
 
 POLICY FinanceManager {
     ASSIGN ROLE ReadBookings;
-    ASSIGN ROLE ReadTickets;
     ASSIGN ROLE ReadPayments;
     ASSIGN ROLE UpdatePayments;
     ASSIGN ROLE DeletePayments;
     ASSIGN ROLE CreatePayments;
     ASSIGN ROLE ReadCustomers;
-    ASSIGN ROLE ReadTickets;
 }
 
 POLICY BusinessAdministrator {
@@ -106,7 +100,6 @@ POLICY BusinessAdministrator {
     ASSIGN ROLE UpdateCities;
     ASSIGN ROLE CreateCities;
 
-    ASSIGN ROLE ReadFlights;
     ASSIGN ROLE DeleteFlights;
     ASSIGN ROLE UpdateFlights;
     ASSIGN ROLE CreateFlights;
@@ -126,7 +119,6 @@ POLICY BusinessAdministrator {
     ASSIGN ROLE UpdateSeatReservations;
     ASSIGN ROLE CreateSeatReservations;
 
-    ASSIGN ROLE ReadTickets;
     ASSIGN ROLE DeleteTickets;
     ASSIGN ROLE UpdateTickets;
     ASSIGN ROLE CreateTickets;

@@ -1,6 +1,6 @@
 // ---------------------------------HEADER_START-----------------------------------------------
 // Generated from a CAP model by the SAP AMS Plugin (@sap/ams) 3.10.0
-// hash of generated content: 6571cb2b7ec7fd181903c58cfeef4a25aa92f70e1fc57ed2853ff183ee71150c
+// hash of generated content: 6db4ef7a200843cf265b6fcefba868fb946247b2d021607f0c57b447b30d8e06
 // ----------------------------------HEADER_END------------------------------------------------
 
 POLICY "CreateAircraftModels" {
@@ -139,10 +139,6 @@ POLICY "ReadCustomers" {
 	ASSIGN ROLE "ReadCustomers";
 }
 
-POLICY "ReadFlights" {
-	ASSIGN ROLE "ReadFlights";
-}
-
 POLICY "ReadPayments" {
 	ASSIGN ROLE "ReadPayments";
 }
@@ -157,10 +153,6 @@ POLICY "ReadSeatReservations" {
 
 POLICY "ReadSecrets" {
 	ASSIGN ROLE "ReadSecrets";
-}
-
-POLICY "ReadTickets" {
-	ASSIGN ROLE "ReadTickets";
 }
 
 POLICY "UpdateAircraftModels" {
