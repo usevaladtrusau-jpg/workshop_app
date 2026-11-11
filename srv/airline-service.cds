@@ -14,4 +14,6 @@ service AirlineService {
   entity Routes            as projection on al.db.Routes;
   entity SeatReservations  as projection on al.db.SeatReservations;
   entity Tickets           as projection on al.db.Tickets;
+
+  action makePayment(ticketId: String) returns String;
 }
