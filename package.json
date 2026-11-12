@@ -72,33 +72,5 @@
   ],
   "sapux": [
     "app/airline-ui"
-  ],
-  "cds": {
-    "requires": {
-      "html5-repo": true,
-      "db": {
-        "[hybrid]": {
-          "kind": "hana",
-          "impl": "@cap-js/hana"
-        }
-      },
-      "auth": {
-        "[hybrid]": {
-          "kind": "mocked",
-          "restrict_all_services": false,
-          "users": {
-            "*": false,
-            "admin": {
-              "password": "A1234",
-              "roles": ["BusinessAdministrator"]
-            },
-            "customer": {
-              "password": "C1234",
-              "roles": ["Passenger"]
-            }
-          }
-        }
-      }
-    }
-  }
+  ]
 }
