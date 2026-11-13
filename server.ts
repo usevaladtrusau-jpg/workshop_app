@@ -7,6 +7,17 @@ import { TicketRepository } from "./srv/repositories/ticket-repositories";
 
 const ticketRepository = new TicketRepository();
 
+if (cds.env.production === false) {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-require-imports
+  const { cds_launchpad_plugin } = require("cds-launchpad-plugin");
+
+  // Enable launchpad plugin
+  cds.once("bootstrap", (app) => {
+    const handler = new cds_launchpad_plugin();
+    app.use(handler.setup({ theme: "sap_horizon", version: "1.120.1" }));
+  });
+}
+
 cds.once("bootstrap", (app) => {
   app.post(
     "/paymentWebhook",
