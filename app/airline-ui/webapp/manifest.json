@@ -23,6 +23,13 @@
           "annotations": [],
           "odataVersion": "4.0"
         }
+      },
+      "paymentService": {
+        "uri": "/odata/v4/payment/",
+        "type": "OData",
+        "settings": {
+            "odataVersion": "4.0"
+        }
       }
     }
   },
@@ -70,6 +77,12 @@
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
+        }
+      },
+      "payment": {
+        "dataSource": "paymentService",
+        "settings": {
+          "synchronizationMode": "None"
         }
       },
       "@i18n": {
