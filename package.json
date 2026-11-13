@@ -4,7 +4,7 @@
     "build": "tsc --noEmit",
     "build:cds": "cds build --production",
     "start": "cds-serve",
-    "start:dev": "cds watch",
+    "start:dev": "cross-env NODE_ENV=development cds watch",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format:cds": "format-cds -f .",
@@ -20,15 +20,15 @@
   },
   "dependencies": {
     "@cap-js/hana": "^3",
+    "@sap-cloud-sdk/connectivity": "^4.9.1",
+    "@sap-cloud-sdk/http-client": "^4.9.1",
     "@sap/ams": "^3",
     "@sap/cds": "^10.1.1",
     "@sap/hdi-deploy": "^5.5.0",
     "@sap/xssec": "^4",
-    "@sap-cloud-sdk/connectivity": "^4.9.1",
-    "@sap-cloud-sdk/http-client": "^4.9.1",
-    "stripe": "^23.1.0",
     "express": "^5.3.0",
-    "node-jose": "^2.2.0"
+    "node-jose": "^2.2.0",
+    "stripe": "^23.1.0"
   },
   "devDependencies": {
     "@cap-js/cds-typer": "^0.41.1",
@@ -41,6 +41,7 @@
     "@types/node": "^24.19.2",
     "@types/node-jose": "^1.1.13",
     "cds-plugin-ui5": "^0.17.0",
+    "cross-env": "^10.1.0",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-x": "^4.17.1",

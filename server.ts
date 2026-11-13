@@ -4,6 +4,7 @@ import Stripe from "stripe";
 
 import { TicketStatus } from "./srv/handlers/payment/constants";
 import { TicketRepository } from "./srv/repositories/ticket-repositories";
+import { getVariable } from "./srv/utils/common";
 
 const ticketRepository = new TicketRepository();
 
@@ -11,14 +12,14 @@ cds.once("bootstrap", (app) => {
   app.post(
     "/paymentWebhook",
     express.raw({ type: "application/json" }),
-    (req, res) => {
+    async (req, res) => {
       let metadata: Stripe.Metadata | null = null;
       let paymentId: string | undefined = undefined;
       let price: number = 0;
 
-      const stripe = getStripe();
+      const stripe = await getStripe();
       const signatureHeader = req.headers["stripe-signature"];
-      const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET as string;
+      const endpointSecret = await getVariable("STRIPE_WEBHOOK_SECRET");
 
       const event = stripe.webhooks.constructEvent(
         req.body,
@@ -42,8 +43,8 @@ cds.once("bootstrap", (app) => {
   );
 });
 
-function getStripe() {
-  const strypeSecretKey = process.env.STRIPE_SECRET_KEY;
+async function getStripe() {
+  const strypeSecretKey = await getVariable("STRIPE_SECRET_KEY");
 
   if (!strypeSecretKey) {
     throw new Error("No stripe secret key provided");
