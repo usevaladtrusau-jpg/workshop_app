@@ -48,6 +48,21 @@
         }
       }
     },
+    "[hybrid]": {
+      "db": {
+        "kind": "hana",
+        "impl": "@cap-js/hana"
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "customer": {
+            "password": "1234",
+            "policies": ["airline.BusinessAdministrator"]
+          }
+        }
+      }
+    },
     "xsuaa": true,
     "html5-repo": true
   }
