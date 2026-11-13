@@ -46,6 +46,7 @@ modules:
 
       - name: airline-app-db
       - name: airline-credentials-store
+      - name: airline-destination-service
 
     deployed-after:
       - airline-app-ams-policies-deployer
@@ -254,3 +255,21 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       service-name: airline-credentials-store
+
+  - name: airline-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+     service: destination
+     service-plan: lite
+     config:
+        HTML5Runtime_enabled: false
+        init_data:
+          instance:
+            existing_destinations_policy: update
+            destinations:
+              - Name: StripeApi
+                Description: Stripe Payment API
+                Type: HTTP
+                URL: https://api.stripe.com
+                ProxyType: Internet
+                Authentication: BasicAuthentication
