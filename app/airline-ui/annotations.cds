@@ -39,11 +39,6 @@ annotate service.Flights with @(
         Label: 'status',
         Value: status,
       },
-      {
-        $Type : 'UI.DataFieldForAction',
-        Action: 'AirlineService.EntityContainer/makePayment',
-        Label : 'makePayment',
-      },
     ],
   },
   UI.Facets                    : [{

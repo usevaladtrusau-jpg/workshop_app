@@ -28,7 +28,7 @@
         "uri": "/odata/v4/payment/",
         "type": "OData",
         "settings": {
-            "odataVersion": "4.0"
+          "odataVersion": "4.0"
         }
       }
     }
@@ -140,8 +140,29 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Flights"
+              "contextPath": "/Flights",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.FieldGroup#GeneratedGroup": {
+                  "actions": {
+                    "payment": {
+                      "press": ".extension.airlineui.ext.controller.FlightsObjectPageExtension.makePayment",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Buy a Ticket"
+                    }
+                  }
+                }
+              }
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.ObjectPageController": {
+            "controllerName": "airlineui.ext.controller.FlightsObjectPageExtension"
           }
         }
       }
