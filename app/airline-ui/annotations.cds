@@ -1,4 +1,4 @@
-using PublicAirlineService as service from '../../srv/airline-service';
+using AirlineService as service from '../../srv/airline-service';
 
 annotate service.Flights with @(
   UI.FieldGroup #GeneratedGroup: {
@@ -38,6 +38,11 @@ annotate service.Flights with @(
         $Type: 'UI.DataField',
         Label: 'status',
         Value: status,
+      },
+      {
+        $Type : 'UI.DataFieldForAction',
+        Action: 'AirlineService.EntityContainer/makePayment',
+        Label : 'makePayment',
       },
     ],
   },

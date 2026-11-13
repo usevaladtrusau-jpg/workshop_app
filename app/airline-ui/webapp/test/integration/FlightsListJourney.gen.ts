@@ -25,7 +25,7 @@ function journey() {
     const defaultTableId = "";
 
     opaTest("Start application", function (Given: Given, _When: When, Then: Then) {
-        Given.iResetMockData({ ServiceUri: "/odata/v4/public-airline/" });
+        Given.iResetMockData({ ServiceUri: "/odata/v4/airline/" });
         Given.iResetTestData();
         Given.iStartMyApp();
 
