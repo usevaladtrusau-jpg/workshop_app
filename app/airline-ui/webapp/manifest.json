@@ -15,6 +15,19 @@
       "version": "1.34.0",
       "toolsId": "e482cd9a-2292-43ab-82a8-70e478be1160"
     },
+    "crossNavigation": {
+      "inbounds": {
+        "Flights-display": {
+          "semanticObject": "Flights",
+          "action": "display",
+          "title": "Flights",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    },
     "dataSources": {
       "mainService": {
         "uri": "/odata/v4/airline/",
@@ -49,7 +62,9 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.fe.core": {},
+        "sap.fe.macros": {}
       }
     },
     "contentDensities": {
@@ -92,6 +107,16 @@
           "pattern": "Flights({key}):?query:",
           "name": "FlightsObjectPage",
           "target": "FlightsObjectPage"
+        },
+        {
+          "name": "SeatReservationsSeatsPage",
+          "pattern": "Flights({key})/seatReservations({seatReservationsKey}):?query:",
+          "target": "SeatReservationsSeatsPage"
+        },
+        {
+          "name": "TicketsTttPage",
+          "pattern": "Flights({key})/tickets({ticketsKey}):?query:",
+          "target": "TicketsTttPage"
         }
       ],
       "targets": {
@@ -127,7 +152,43 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Flights"
+              "contextPath": "/Flights",
+              "navigation": {
+                "seatReservations": {
+                  "detail": {
+                    "route": "SeatReservationsSeatsPage"
+                  }
+                },
+                "tickets": {
+                  "detail": {
+                    "route": "TicketsTttPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "SeatReservationsSeatsPage": {
+          "type": "Component",
+          "id": "SeatReservationsSeatsPage",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Flights/seatReservations",
+              "viewName": "airlineui.ext.view.Seats"
+            }
+          }
+        },
+        "TicketsTttPage": {
+          "type": "Component",
+          "id": "TicketsTttPage",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Flights/tickets",
+              "viewName": "airlineui.ext.view.Ttt"
             }
           }
         }

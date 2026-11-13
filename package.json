@@ -12,7 +12,8 @@
     "check": "npm run lint && npm run format:cds:check",
     "prepare": "husky || true",
     "types": "cds-typer \"*\" --outputDirectory @cds-models",
-    "watch-airline-ui": "cds watch --open airlineui/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-airline-ui": "cds watch --open airlineui/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-cities-ui": "cds watch --open citiesui/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",
@@ -20,15 +21,15 @@
   },
   "dependencies": {
     "@cap-js/hana": "^3",
-    "@sap/ams": "^3",
-    "@sap/cds": "^10.1.1",
-    "@sap/hdi-deploy": "^5.5.0",
-    "@sap/xssec": "^4",
     "@sap-cloud-sdk/connectivity": "^4.9.1",
     "@sap-cloud-sdk/http-client": "^4.9.1",
-    "stripe": "^23.1.0",
+    "@sap/ams": "^3",
+    "@sap/cds": "^10.2.2",
+    "@sap/hdi-deploy": "^5.5.0",
+    "@sap/xssec": "^4",
     "express": "^5.3.0",
-    "node-jose": "^2.2.0"
+    "node-jose": "^2.2.0",
+    "stripe": "^23.1.0"
   },
   "devDependencies": {
     "@cap-js/cds-typer": "^0.41.1",
@@ -36,10 +37,12 @@
     "@cap-js/sqlite": "^3.1.2",
     "@eslint/js": "^10.0.1",
     "@sap/ams-dev": "^3",
-    "@sap/cds-dk": "^10.2.0",
+    "@sap/cds-compiler": "^7.2.1",
+    "@sap/cds-dk": "^10.2.1",
     "@sap/cds-lsp": "^10.2.1",
     "@types/node": "^24.19.2",
     "@types/node-jose": "^1.1.13",
+    "cds-launchpad-plugin": "^2.3.0",
     "cds-plugin-ui5": "^0.17.0",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
@@ -62,7 +65,7 @@
     "fsevents@2.3.3": true,
     "unrs-resolver@1.12.2": true,
     "mbt@1.2.50": true,
-    " ui5-tooling-transpile@3.14.1": true
+    "ui5-tooling-transpile@3.14.1": true
   },
   "engines": {
     "node": "^24"
@@ -71,6 +74,7 @@
     "app/*"
   ],
   "sapux": [
-    "app/airline-ui"
+    "app/airline-ui",
+    "app/cities-ui"
   ]
 }

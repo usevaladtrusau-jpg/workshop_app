@@ -1,4 +1,5 @@
 import cds from "@sap/cds";
+import { cds_launchpad_plugin } from "cds-launchpad-plugin";
 import express from "express";
 import Stripe from "stripe";
 
@@ -6,6 +7,13 @@ import { TicketStatus } from "./srv/handlers/payment/constants";
 import { TicketRepository } from "./srv/repositories/ticket-repositories";
 
 const ticketRepository = new TicketRepository();
+
+if (cds.env.production === false) {
+  cds.once("bootstrap", (app) => {
+    const handler = new cds_launchpad_plugin();
+    app.use(handler.setup());
+  });
+}
 
 cds.once("bootstrap", (app) => {
   app.post(
