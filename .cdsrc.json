@@ -1,4 +1,11 @@
 {
+   "launchpad": {
+      "basePath": "/launchpad",
+      "theme": "sap_horizon",
+      "version": "1.154.0",
+      "locale": "",
+      "template": "async"
+    },
   "features": {
     "assert_integrity": "db"
   },
@@ -18,6 +25,12 @@
             "roles": [
               "ReadSecrets"
             ]
+          },
+          "ui-bob": {
+            "password": "secrets123",
+            "policies": [
+                "airline.BusinessAdministrator"
+              ]
           }
         }
       },
