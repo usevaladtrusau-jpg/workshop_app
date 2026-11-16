@@ -2,6 +2,8 @@ import ControllerExtension from "sap/ui/core/mvc/ControllerExtension";
 import ExtensionAPI from "sap/fe/templates/ObjectPage/ExtensionAPI";
 import Context from "sap/ui/model/odata/v4/Context";
 import Log from "sap/base/Log";
+import UI5Event from "sap/ui/base/Event";
+import Button from "sap/m/Button";
 
 /**
  * @namespace airlineui.ext.controller
@@ -9,24 +11,12 @@ import Log from "sap/base/Log";
  */
 export default class FlightsObjectPageExtension extends ControllerExtension<ExtensionAPI> {
 
-    async makePayment(oContext: Context) {
+    async makePayment(oEvent: UI5Event) {
         try {
-            const oTicketsBinding = oContext.getModel().bindList(
-                "tickets",
-                oContext
-            );
+            const oButton = oEvent.getSource() as Button;
+            const oContext = oButton.getBindingContext() as Context;
 
-            const aTicketContexts = await oTicketsBinding.requestContexts(0, 2);
-
-            if (aTicketContexts.length === 0) {
-                throw new Error("No tickets found for this flight");
-            }
-
-            if (aTicketContexts.length > 1) {
-                throw new Error("Multiple tickets found. A ticket must be selected.");
-            }
-
-            const sTicketId = aTicketContexts[0].getProperty("ID");
+            const sTicketId = oContext.getProperty("ID");
 
             const oPaymentModel = this.base
                 .getExtensionAPI()
@@ -51,7 +41,7 @@ export default class FlightsObjectPageExtension extends ControllerExtension<Exte
 
     static overrides = {
         onInit(this: FlightsObjectPageExtension) {
-            // Initialization
+        
         }
     };
 }

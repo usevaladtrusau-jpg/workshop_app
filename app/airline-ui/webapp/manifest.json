@@ -142,13 +142,21 @@
               "editableHeaderContent": false,
               "contextPath": "/Flights",
               "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.FieldGroup#GeneratedGroup": {
-                  "actions": {
-                    "payment": {
-                      "press": ".extension.airlineui.ext.controller.FlightsObjectPageExtension.makePayment",
-                      "visible": true,
-                      "enabled": true,
-                      "text": "Buy a Ticket"
+                "tickets/@com.sap.vocabularies.UI.v1.LineItem#Tickets": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "buyTicket": {
+                      "key": "buyTicket",
+                      "header": "Action",
+                      "width": "12rem",
+                      "position": {
+                        "anchor": "DataField::status",
+                        "placement": "After"
+                      },
+                      "template": "airlineui.ext.fragments.buyTicket",
+                      "press": ".extension.airlineui.ext.controller.FlightsObjectPageExtension.makePayment"
                     }
                   }
                 }

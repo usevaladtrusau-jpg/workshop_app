@@ -41,12 +41,20 @@ annotate service.Flights with @(
       },
     ],
   },
-  UI.Facets                    : [{
-    $Type : 'UI.ReferenceFacet',
-    ID    : 'GeneratedFacet1',
-    Label : 'General Information',
-    Target: '@UI.FieldGroup#GeneratedGroup',
-  }, ],
+  UI.Facets                    : [
+    {
+      $Type : 'UI.ReferenceFacet',
+      ID    : 'GeneratedFacet1',
+      Label : 'General Information',
+      Target: '@UI.FieldGroup#GeneratedGroup',
+    },
+    {
+      $Type : 'UI.ReferenceFacet',
+      Label : 'Tickets',
+      ID    : 'Tickets',
+      Target: 'tickets/@UI.LineItem#Tickets',
+    },
+  ],
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
@@ -75,3 +83,21 @@ annotate service.Flights with @(
     },
   ],
 );
+
+annotate service.Tickets with @(UI.LineItem #Tickets: [
+  {
+    $Type: 'UI.DataField',
+    Value: totalPrice,
+    Label: 'totalPrice',
+  },
+  {
+    $Type: 'UI.DataField',
+    Value: status,
+    Label: 'status',
+  },
+  {
+    $Type: 'UI.DataField',
+    Value: seatReservations.aircraftSeat.cabinClass,
+    Label: 'cabinClass',
+  },
+]);
