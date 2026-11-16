@@ -11,3 +11,5 @@ using from './airports/annotations';
 using from './customers/annotations';
 
 using from './aircraft-seats/annotations';
+
+using from './routes/annotations';

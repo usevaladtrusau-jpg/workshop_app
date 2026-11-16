@@ -18,7 +18,8 @@
     "watch-aircrafts": "cds watch --open aircrafts/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-airports": "cds watch --open airports/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-customers": "cds watch --open customers/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-aircraft-seats": "cds watch --open aircraftseats/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-aircraft-seats": "cds watch --open aircraftseats/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-routes": "cds watch --open routes/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",
@@ -85,6 +86,7 @@
     "app/aircrafts",
     "app/airports",
     "app/customers",
-    "app/aircraft-seats"
+    "app/aircraft-seats",
+    "app/routes"
   ]
 }
