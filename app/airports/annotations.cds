@@ -6,22 +6,27 @@ annotate service.Airports with @(
     Data : [
       {
         $Type: 'UI.DataField',
-        Label: 'iataCode',
+        Label: 'Iata code',
         Value: iataCode,
       },
       {
         $Type: 'UI.DataField',
-        Label: 'icaoCode',
+        Label: 'Icao code',
         Value: icaoCode,
       },
       {
         $Type: 'UI.DataField',
-        Label: 'name',
+        Label: 'City',
+        Value: city_ID,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'Name',
         Value: name,
       },
       {
         $Type: 'UI.DataField',
-        Label: 'timeZone_code',
+        Label: 'Timezone',
         Value: timeZone_code,
       },
     ],
@@ -42,6 +47,11 @@ annotate service.Airports with @(
       $Type: 'UI.DataField',
       Label: 'icaoCode',
       Value: icaoCode,
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'City',
+      Value: city.name
     },
     {
       $Type: 'UI.DataField',

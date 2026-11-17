@@ -35,8 +35,18 @@ annotate service.Routes with @(
     },
     {
       $Type: 'UI.DataField',
+      Label: 'Departure City',
+      Value: departureAirport.city.name
+    },
+    {
+      $Type: 'UI.DataField',
       Label: 'Arrival Airport',
       Value: arrivalAirport.name
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'Arrival City',
+      Value: arrivalAirport.city.name
     }
   ],
 );
