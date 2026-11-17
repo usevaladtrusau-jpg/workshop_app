@@ -11,7 +11,7 @@ annotate service.AircraftModels with @(
       },
       {
         $Type: 'UI.DataField',
-        Label: 'modelName',
+        Label: 'model name',
         Value: modelName,
       },
     ],
@@ -30,7 +30,7 @@ annotate service.AircraftModels with @(
     },
     {
       $Type: 'UI.DataField',
-      Label: 'modelName',
+      Label: 'model name',
       Value: modelName,
     },
   ],
