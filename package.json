@@ -85,7 +85,6 @@
     "app/aircraft-models-ui",
     "app/aircrafts",
     "app/airports",
-    "app/customers",
     "app/aircraft-seats",
     "app/routes"
   ]
