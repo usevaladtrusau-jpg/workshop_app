@@ -6,12 +6,12 @@ annotate service.Routes with @(
     Data : [
       {
         $Type: 'UI.DataField',
-        Label: 'Departure Airport',
+        Label: 'departure airport',
         Value: departureAirport_ID
       },
       {
         $Type: 'UI.DataField',
-        Label: 'Arrival Airport',
+        Label: 'arrival airport',
         Value: arrivalAirport_ID
       }
     ],
@@ -30,83 +30,91 @@ annotate service.Routes with @(
     },
     {
       $Type: 'UI.DataField',
-      Label: 'Departure Airport',
+      Label: 'departure airport',
       Value: departureAirport.name
     },
     {
       $Type: 'UI.DataField',
-      Label: 'Departure City',
+      Label: 'departure city',
       Value: departureAirport.city.name
     },
     {
       $Type: 'UI.DataField',
-      Label: 'Arrival Airport',
+      Label: 'arrival airport',
       Value: arrivalAirport.name
     },
     {
       $Type: 'UI.DataField',
-      Label: 'Arrival City',
+      Label: 'arrival city',
       Value: arrivalAirport.city.name
     }
   ],
 );
 
 annotate service.Routes with {
-  departureAirport @Common.ValueList: {
-    $Type         : 'Common.ValueListType',
-    CollectionPath: 'Airports',
-    Parameters    : [
-      {
-        $Type            : 'Common.ValueListParameterInOut',
-        LocalDataProperty: departureAirport_ID,
-        ValueListProperty: 'ID',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'iataCode',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'icaoCode',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'name',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'timeZone_code',
-      },
-    ],
-  }
+  departureAirport @(
+    Common.Text           : departureAirport.name,
+    Common.TextArrangement: #TextOnly,
+    Common.ValueList      : {
+      $Type         : 'Common.ValueListType',
+      CollectionPath: 'Airports',
+      Parameters    : [
+        {
+          $Type            : 'Common.ValueListParameterInOut',
+          LocalDataProperty: departureAirport_ID,
+          ValueListProperty: 'ID',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'iataCode',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'icaoCode',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'name',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'timeZone_code',
+        },
+      ],
+    }
+  )
 };
 
 annotate service.Routes with {
-  arrivalAirport @Common.ValueList: {
-    $Type         : 'Common.ValueListType',
-    CollectionPath: 'Airports',
-    Parameters    : [
-      {
-        $Type            : 'Common.ValueListParameterInOut',
-        LocalDataProperty: arrivalAirport_ID,
-        ValueListProperty: 'ID',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'iataCode',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'icaoCode',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'name',
-      },
-      {
-        $Type            : 'Common.ValueListParameterDisplayOnly',
-        ValueListProperty: 'timeZone_code',
-      },
-    ],
-  }
+  arrivalAirport @(
+    Common.Text           : arrivalAirport.name,
+    Common.TextArrangement: #TextOnly,
+    Common.ValueList      : {
+      $Type         : 'Common.ValueListType',
+      CollectionPath: 'Airports',
+      Parameters    : [
+        {
+          $Type            : 'Common.ValueListParameterInOut',
+          LocalDataProperty: arrivalAirport_ID,
+          ValueListProperty: 'ID',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'iataCode',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'icaoCode',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'name',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'timeZone_code',
+        },
+      ],
+    }
+  )
 };
