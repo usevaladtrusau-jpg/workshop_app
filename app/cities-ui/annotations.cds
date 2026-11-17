@@ -6,7 +6,7 @@ annotate service.Cities with @(
     Data : [
       {
         $Type: 'UI.DataField',
-        Label: 'country_code',
+        Label: 'code',
         Value: country_code,
       },
       {
@@ -25,7 +25,7 @@ annotate service.Cities with @(
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
-      Label: 'country_code',
+      Label: 'code',
       Value: country_code,
     },
     {
