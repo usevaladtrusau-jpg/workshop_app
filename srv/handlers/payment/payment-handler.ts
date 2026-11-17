@@ -1,5 +1,4 @@
 import { TicketRepository } from "../../repositories/ticket-repositories";
-import { getVariable } from "../../utils/common";
 import { DestinationService } from "../../utils/destination.service";
 
 export class PaymentHandler {
@@ -9,8 +8,8 @@ export class PaymentHandler {
     await this.checkTicket(ticketId);
 
     const destinationService = new DestinationService("StripeApi");
-    const successUrl = await getVariable("STRIPE_SUCCESS_URL");
-    const cancelUrl = await getVariable("STRIPE_CANCEL_URL");
+    const successUrl = process.env.STRIPE_SUCCESS_URL!;
+    const cancelUrl = process.env.STRIPE_CANCEL_URL!;
 
     const body = new URLSearchParams({
       mode: "payment",
