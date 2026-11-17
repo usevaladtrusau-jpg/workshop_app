@@ -41,7 +41,7 @@ export default class FlightsObjectPageExtension extends ControllerExtension<Exte
 
     static overrides = {
         onInit(this: FlightsObjectPageExtension) {
-        
+            
         }
     };
 }

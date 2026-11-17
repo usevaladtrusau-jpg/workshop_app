@@ -6,6 +6,6 @@
         id="buyTicketButton"
         text="Buy a Ticket"
         type="Emphasized"
-        press="airlineui.ext.controller.FlightsObjectPageExtension.makePayment" />
+        press=".extension.airlineui.ext.controller.FlightsObjectPageExtension.makePayment" />
 
 </core:FragmentDefinition>
