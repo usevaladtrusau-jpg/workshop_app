@@ -6,7 +6,7 @@ annotate service.Aircrafts with @(
     Data : [
       {
         $Type: 'UI.DataField',
-        Label: 'registrationNumber',
+        Label: 'registration number',
         Value: registrationNumber,
       },
       {
@@ -16,7 +16,7 @@ annotate service.Aircrafts with @(
       },
       {
         $Type: 'UI.DataField',
-        Label: 'Aircraft Model',
+        Label: 'aircraft model',
         Value: model_ID,
       }
     ]
@@ -30,7 +30,7 @@ annotate service.Aircrafts with @(
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
-      Label: 'registrationNumber',
+      Label: 'registration number',
       Value: registrationNumber,
     },
     {
@@ -40,7 +40,7 @@ annotate service.Aircrafts with @(
     },
     {
       $Type: 'UI.DataField',
-      Label: 'Aircraft Model',
+      Label: 'aircraft model',
       Value: model.modelName,
     }
   ]
