@@ -1,5 +1,20 @@
 using AirlineService from '../../srv/airline-service';
 
+annotate AirlineService.Flights with @(UI.HeaderInfo: {
+  TypeName      : 'Flight',
+  TypeNamePlural: 'Flights',
+
+  Title         : {
+    $Type: 'UI.DataField',
+    Value: flightNumber
+  },
+
+  Description   : {
+    $Type: 'UI.DataField',
+    Value: aircraft.model.modelName
+  }
+});
+
 annotate AirlineService.Flights with @(
   UI.FieldGroup #GeneratedGroup: {
     $Type: 'UI.FieldGroupType',
@@ -43,6 +58,11 @@ annotate AirlineService.Flights with @(
         $Type: 'UI.DataField',
         Label: 'route',
         Value: route_ID,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'aircraft',
+        Value: aircraft_ID,
       },
       {
         $Type : 'UI.DataFieldForAction',
@@ -121,11 +141,11 @@ annotate AirlineService.Tickets with @(UI.SelectionFields: [totalPrice]);
 
 annotate AirlineService.Flights with {
   route @(
-    Common.Text           : model.modelName,
+    Common.Text           : route.ID,
     Common.TextArrangement: #TextOnly,
     Common.ValueList      : {
       $Type         : 'Common.ValueListType',
-      CollectionPath: 'AircraftModels',
+      CollectionPath: 'Routes',
       Parameters    : [
         {
           $Type            : 'Common.ValueListParameterInOut',
@@ -134,12 +154,38 @@ annotate AirlineService.Flights with {
         },
         {
           $Type            : 'Common.ValueListParameterDisplayOnly',
-          ValueListProperty: 'departureAirport/name',
+          ValueListProperty: 'departureAirport/city/name',
         },
         {
           $Type            : 'Common.ValueListParameterDisplayOnly',
-          ValueListProperty: 'arrivalAirport_name',
+          ValueListProperty: 'arrivalAirport/city/name',
         },
+      ],
+    },
+  );
+};
+
+annotate AirlineService.Flights with {
+  aircraft @(
+    Common.Text           : aircraft.registrationNumber,
+    Common.TextArrangement: #TextOnly,
+    Common.ValueList      : {
+      $Type         : 'Common.ValueListType',
+      CollectionPath: 'Aircrafts',
+      Parameters    : [
+        {
+          $Type            : 'Common.ValueListParameterInOut',
+          LocalDataProperty: aircraft_ID,
+          ValueListProperty: 'ID',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'registrationNumber',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'model/modelName',
+        }
       ],
     },
   );

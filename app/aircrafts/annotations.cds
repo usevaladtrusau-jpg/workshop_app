@@ -1,5 +1,20 @@
 using AirlineService as service from '../../srv/airline-service';
 
+annotate service.Aircrafts with @(UI.HeaderInfo: {
+  TypeName      : 'Aircraft',
+  TypeNamePlural: 'Aircrafts',
+
+  Title         : {
+    $Type: 'UI.DataField',
+    Value: registrationNumber
+  },
+
+  Description   : {
+    $Type: 'UI.DataField',
+    Value: model.modelName
+  }
+});
+
 annotate service.Aircrafts with @(
   UI.FieldGroup #GeneratedGroup: {
     $Type: 'UI.FieldGroupType',
