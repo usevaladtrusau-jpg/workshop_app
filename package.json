@@ -18,7 +18,6 @@
     "watch-aircrafts": "cds watch --open aircrafts/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-airports": "cds watch --open airports/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-customers": "cds watch --open customers/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-aircraft-seats": "cds watch --open aircraftseats/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-routes": "cds watch --open routes/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "lint-staged": {
@@ -85,7 +84,6 @@
     "app/aircraft-models-ui",
     "app/aircrafts",
     "app/airports",
-    "app/aircraft-seats",
     "app/routes"
   ]
 }

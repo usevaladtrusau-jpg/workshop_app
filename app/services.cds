@@ -8,6 +8,4 @@ using from './aircrafts/annotations';
 
 using from './airports/annotations';
 
-using from './aircraft-seats/annotations';
-
 using from './routes/annotations';
