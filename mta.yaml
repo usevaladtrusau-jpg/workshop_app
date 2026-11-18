@@ -46,6 +46,7 @@ modules:
 
       - name: airline-app-db
       - name: airline-credentials-store
+      - name: airline-destination-service
 
     deployed-after:
       - airline-app-ams-policies-deployer
@@ -79,7 +80,6 @@ modules:
           name: srv-api
           url: ~{srv-cert-url}
           forwardAuthToken: true
-          forwardAuthCertificates: true
           strictSSL: true
 
       - name: airline-app-auth
@@ -254,3 +254,9 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       service-name: airline-credentials-store
+
+  - name: airline-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+     service: destination
+     service-plan: lite
