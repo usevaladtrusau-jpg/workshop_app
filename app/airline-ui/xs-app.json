@@ -4,6 +4,13 @@
   "authenticationMethod": "route",
   "routes": [
     {
+      "source": "^/paymentWebhook$",
+      "target": "/paymentWebhook",
+      "destination": "srv-api",
+      "authenticationType": "none",
+      "csrfProtection": false
+    },
+    {
       "source": "^/?odata/(.*)$",
       "target": "/odata/$1",
       "destination": "srv-api",

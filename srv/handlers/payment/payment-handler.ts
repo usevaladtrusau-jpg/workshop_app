@@ -8,11 +8,13 @@ export class PaymentHandler {
     await this.checkTicket(ticketId);
 
     const destinationService = new DestinationService("StripeApi");
+    const successUrl = process.env.STRIPE_SUCCESS_URL!;
+    const cancelUrl = process.env.STRIPE_CANCEL_URL!;
 
     const body = new URLSearchParams({
       mode: "payment",
-      success_url: "http://localhost:4004/odata/v4/Payment/success",
-      cancel_url: "http://localhost:4004/odata/v4/Payment/cancel",
+      success_url: successUrl,
+      cancel_url: cancelUrl,
       "metadata[orderId]": ticketId,
       "line_items[0][quantity]": "1",
       "line_items[0][price_data][currency]": "usd",

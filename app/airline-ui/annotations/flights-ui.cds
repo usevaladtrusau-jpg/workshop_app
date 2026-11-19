@@ -1,6 +1,8 @@
-using AirlineService as service from '../../srv/airline-service';
+using AirlineService from '../../../srv/airline-service';
+using from '../../../srv/airline-service';
 
-annotate service.Flights with @(
+
+annotate AirlineService.Flights with @(
   UI.FieldGroup #GeneratedGroup: {
     $Type: 'UI.FieldGroupType',
     Data : [
@@ -83,6 +85,11 @@ annotate service.Flights with @(
     },
   ],
 );
+
+annotate AirlineService.Flights with @(UI.SelectionFields: [
+  status,
+  actualDepartureAt
+]);
 
 annotate service.Tickets with @(UI.LineItem #Tickets: [
   {
