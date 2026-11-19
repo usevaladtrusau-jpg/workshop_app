@@ -97,7 +97,7 @@ annotate service.Tickets with @(UI.LineItem #Tickets: [
   },
   {
     $Type: 'UI.DataField',
-    Value: seatReservations.aircraftSeat.cabinClass,
+    Value: aircraftSeats.cabinClass,
     Label: 'cabinClass',
   },
 ]);
