@@ -36,6 +36,13 @@
           "annotations": [],
           "odataVersion": "4.0"
         }
+      },
+      "paymentService": {
+        "uri": "/odata/v4/payment/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
       }
     }
   },
@@ -89,6 +96,12 @@
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
+        }
+      },
+      "payment": {
+        "dataSource": "paymentService",
+        "settings": {
+          "synchronizationMode": "None"
         }
       },
       "@i18n": {
@@ -157,6 +170,26 @@
             "settings": {
               "editableHeaderContent": false,
               "contextPath": "/Flights",
+              "controlConfiguration": {
+                "tickets/@com.sap.vocabularies.UI.v1.LineItem#Tickets": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "buyTicket": {
+                      "key": "buyTicket",
+                      "header": "Action",
+                      "width": "12rem",
+                      "position": {
+                        "anchor": "DataField::status",
+                        "placement": "After"
+                      },
+                      "template": "airlineui.ext.fragments.buyTicket",
+                      "press": ".extension.airlineui.ext.controller.FlightsObjectPageExtension.makePayment"
+                    }
+                  }
+                }
+              },
               "navigation": {
                 "seatReservations": {
                   "detail": {

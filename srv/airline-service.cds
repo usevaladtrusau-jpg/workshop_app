@@ -39,6 +39,4 @@ service AirlineService {
 
   @odata.draft.enabled
   entity Tickets           as projection on al.db.Tickets;
-
-  action makePayment(ticketId: String) returns String;
 }

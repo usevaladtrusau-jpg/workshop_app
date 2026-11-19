@@ -2,7 +2,7 @@ namespace airline.db;
 
 using {cuid, managed} from '@sap/cds/common';
 using airline.db.Aircrafts from './aircrafts';
-using airline.db.SeatReservations from './seatReservations';
+using airline.db.Tickets from './tickets';
 
 type CabinClasses : String enum {
   Economy;
@@ -16,10 +16,10 @@ type CabinClasses : String enum {
   seatNumber
 ]
 entity AircraftSeats : cuid, managed {
-  aircraft         : Association to one Aircrafts;
-  seatNumber       : String(3)    @mandatory;
-  cabinClass       : CabinClasses @mandatory;
+  aircraft   : Association to one Aircrafts;
+  seatNumber : String(3)    @mandatory;
+  cabinClass : CabinClasses @mandatory;
 
-  seatReservations : Association to many SeatReservations
-                       on seatReservations.aircraftSeat = $self;
+  tickets    : Association to one Tickets
+                 on tickets.aircraftSeats = $self;
 }

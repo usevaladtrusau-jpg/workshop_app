@@ -80,7 +80,6 @@ modules:
           name: srv-api
           url: ~{srv-cert-url}
           forwardAuthToken: true
-          forwardAuthCertificates: true
           strictSSL: true
 
       - name: airline-app-auth
@@ -267,7 +266,7 @@ modules:
             - Name: airline-app-html5-repository
               ServiceInstanceName: airline-app-html5-repo-host
               ServiceKeyName: airline-app-html5-repo-host-key
-              sap.cloud.service: com.airline.management
+              sap.cloud.service: airlineapp.service
 
 resources:
 
@@ -379,9 +378,5 @@ resources:
   - name: airline-destination-service
     type: org.cloudfoundry.managed-service
     parameters:
-      service: destination
-      service-plan: lite
-      config:
-        HTML5Runtime_enabled: true
-    requires:
-      - name: srv-api
+     service: destination
+     service-plan: lite
