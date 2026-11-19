@@ -39,6 +39,10 @@
       }
     }
   },
+  "sap.cloud": {
+    "public": true,
+    "service": "com.airline.management"
+  },
   "sap.ui": {
     "technology": "UI5",
     "icons": {

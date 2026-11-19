@@ -1,4 +1,6 @@
 {
+  "destinations": true,
+   "workzone": true,
    "[development]": {
     "launchpad": {
       "basePath": "/launchpad",

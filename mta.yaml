@@ -46,6 +46,7 @@ modules:
 
       - name: airline-app-db
       - name: airline-credentials-store
+      - name: airline-destination-service
 
     deployed-after:
       - airline-app-ams-policies-deployer
@@ -90,6 +91,7 @@ modules:
             credential-type: X509_GENERATED
             app-identifier: approuter
       - name: airline-app-html5-runtime
+      - name: airline-destination-service
 
     provides:
       - name: app-api
@@ -120,6 +122,7 @@ modules:
   - name: airline-app-app-deployer
     type: com.sap.application.content
     path: gen
+
     build-parameters:
       build-result: app/
       requires:
@@ -127,13 +130,51 @@ modules:
           artifacts:
             - airline-ui.zip
           target-path: app/
+
+        - name: airlineappcitiesui
+          artifacts:
+            - cities-ui.zip
+          target-path: app/
+
+        - name: airlineappaircraftmodelsui
+          artifacts:
+            - aircraft-models-ui.zip
+          target-path: app/
+
+        - name: airlineappaircrafts
+          artifacts:
+            - aircrafts.zip
+          target-path: app/
+
+        - name: airlineappairports
+          artifacts:
+            - airports.zip
+          target-path: app/
+
+        - name: airlineapproutes
+          artifacts:
+            - routes.zip
+          target-path: app/
+
     requires:
       - name: srv-api
+
       - name: airline-app-html5-repo-host
         parameters:
           content-target: true
           config:
             HTML5Runtime_enabled: true
+            IASDependencyName: airline-app-ias-api
+    parameters:
+      config:
+        destinations:
+          - Name: srv-api
+            URL: ~{srv-api/srv-url}
+            Authentication: NoAuthentication
+            Type: HTTP
+            ProxyType: Internet
+            ForwardAuthToken: true
+            DynamicDestination: true
             IASDependencyName: airline-app-ias-api
 
   - name: airlineappairlineui
@@ -147,6 +188,86 @@ modules:
         - npm run build
       supported-platforms:
         []
+
+  - name: airlineappcitiesui
+    type: html5
+    path: app/cities-ui
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+
+  - name: airlineappaircraftmodelsui
+    type: html5
+    path: app/aircraft-models-ui
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms:
+        []
+   
+  - name: airlineappaircrafts
+    type: html5
+    path: app/aircrafts
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms:
+        []
+   
+  - name: airlineappairports
+    type: html5
+    path: app/airports
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms:
+        []
+   
+  - name: airlineapproutes
+    type: html5
+    path: app/routes
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm run build
+      supported-platforms:
+        []
+    
+
+  - name: airline-app-destinations
+    type: com.sap.application.content
+    requires:
+      - name: airline-app-html5-repo-host
+        parameters:
+          service-key:
+            name: airline-app-html5-repo-host-key
+      - name: srv-api
+      - name: airline-destination-service
+        parameters:
+          content-target: true
+    build-parameters:
+      no-source: true
+    parameters:
+      content:
+        instance:
+          existing_destinations_policy: update
+          destinations:
+            - Name: airline-app-html5-repository
+              ServiceInstanceName: airline-app-html5-repo-host
+              ServiceKeyName: airline-app-html5-repo-host-key
+              sap.cloud.service: com.airline.management
 
 resources:
 
@@ -254,3 +375,13 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       service-name: airline-credentials-store
+
+  - name: airline-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      config:
+        HTML5Runtime_enabled: true
+    requires:
+      - name: srv-api
