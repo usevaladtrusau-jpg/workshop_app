@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+    <Button
+        id="buyTicketButton"
+        text="Buy a Ticket"
+        type="Emphasized"
+        press=".extension.airlineui.ext.controller.FlightsObjectPageExtension.makePayment" />
+
+</core:FragmentDefinition>

@@ -41,19 +41,22 @@ annotate AirlineService.Flights with @(
         Label: 'status',
         Value: status,
       },
-      {
-        $Type : 'UI.DataFieldForAction',
-        Action: 'AirlineService.EntityContainer/makePayment',
-        Label : 'makePayment',
-      },
     ],
   },
-  UI.Facets                    : [{
-    $Type : 'UI.ReferenceFacet',
-    ID    : 'GeneratedFacet1',
-    Label : 'General Information',
-    Target: '@UI.FieldGroup#GeneratedGroup',
-  }, ],
+  UI.Facets                    : [
+    {
+      $Type : 'UI.ReferenceFacet',
+      ID    : 'GeneratedFacet1',
+      Label : 'General Information',
+      Target: '@UI.FieldGroup#GeneratedGroup',
+    },
+    {
+      $Type : 'UI.ReferenceFacet',
+      Label : 'Tickets',
+      ID    : 'Tickets',
+      Target: 'tickets/@UI.LineItem#Tickets',
+    },
+  ],
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
@@ -86,4 +89,22 @@ annotate AirlineService.Flights with @(
 annotate AirlineService.Flights with @(UI.SelectionFields: [
   status,
   actualDepartureAt
+]);
+
+annotate service.Tickets with @(UI.LineItem #Tickets: [
+  {
+    $Type: 'UI.DataField',
+    Value: totalPrice,
+    Label: 'totalPrice',
+  },
+  {
+    $Type: 'UI.DataField',
+    Value: status,
+    Label: 'status',
+  },
+  {
+    $Type: 'UI.DataField',
+    Value: aircraftSeats.cabinClass,
+    Label: 'cabinClass',
+  },
 ]);
