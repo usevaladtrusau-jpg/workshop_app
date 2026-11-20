@@ -63,20 +63,23 @@ annotate AirlineService.Flights with @(
         $Type: 'UI.DataField',
         Label: 'aircraft',
         Value: aircraft_ID,
-      },
-      {
-        $Type : 'UI.DataFieldForAction',
-        Action: 'AirlineService.EntityContainer/makePayment',
-        Label : 'makePayment',
-      },
+      }
     ],
   },
-  UI.Facets                    : [{
-    $Type : 'UI.ReferenceFacet',
-    ID    : 'GeneratedFacet1',
-    Label : 'General Information',
-    Target: '@UI.FieldGroup#GeneratedGroup',
-  }, ],
+  UI.Facets                    : [
+    {
+      $Type : 'UI.ReferenceFacet',
+      ID    : 'GeneratedFacet1',
+      Label : 'General Information',
+      Target: '@UI.FieldGroup#GeneratedGroup',
+    },
+    {
+      $Type : 'UI.ReferenceFacet',
+      Label : 'Tickets',
+      ID    : 'Tickets',
+      Target: 'tickets/@UI.LineItem#Tickets',
+    },
+  ],
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
@@ -117,20 +120,6 @@ annotate AirlineService.Flights with @(
   ],
 );
 
-annotate AirlineService.Cities with @(UI.LineItem #tableMacro: [
-  {
-    $Type: 'UI.DataField',
-    Value: ID,
-    Label: 'ID',
-  },
-  {
-    $Type: 'UI.DataField',
-    Value: name,
-    Label: 'name',
-  },
-]);
-
-annotate AirlineService.Tickets with @(UI.SelectionFields: [totalPrice]);
 
 annotate AirlineService.Flights with {
   route @(
@@ -183,95 +172,6 @@ annotate AirlineService.Flights with {
     },
   );
 };
-
-annotate AirlineService.Flights with @(
-  UI.FieldGroup #GeneratedGroup: {
-    $Type: 'UI.FieldGroupType',
-    Data : [
-      {
-        $Type: 'UI.DataField',
-        Label: 'flightNumber',
-        Value: flightNumber,
-      },
-      {
-        $Type: 'UI.DataField',
-        Label: 'scheduledDepartureAt',
-        Value: scheduledDepartureAt,
-      },
-      {
-        $Type: 'UI.DataField',
-        Label: 'scheduledArrivalAt',
-        Value: scheduledArrivalAt,
-      },
-      {
-        $Type: 'UI.DataField',
-        Label: 'actualDepartureAt',
-        Value: actualDepartureAt,
-      },
-      {
-        $Type: 'UI.DataField',
-        Label: 'actualArrivalAt',
-        Value: actualArrivalAt,
-      },
-      {
-        $Type: 'UI.DataField',
-        Label: 'boardingGate',
-        Value: boardingGate,
-      },
-      {
-        $Type: 'UI.DataField',
-        Label: 'status',
-        Value: status,
-      },
-    ],
-  },
-  UI.Facets                    : [
-    {
-      $Type : 'UI.ReferenceFacet',
-      ID    : 'GeneratedFacet1',
-      Label : 'General Information',
-      Target: '@UI.FieldGroup#GeneratedGroup',
-    },
-    {
-      $Type : 'UI.ReferenceFacet',
-      Label : 'Tickets',
-      ID    : 'Tickets',
-      Target: 'tickets/@UI.LineItem#Tickets',
-    },
-  ],
-  UI.LineItem                  : [
-    {
-      $Type: 'UI.DataField',
-      Label: 'flightNumber',
-      Value: flightNumber,
-    },
-    {
-      $Type: 'UI.DataField',
-      Label: 'scheduledDepartureAt',
-      Value: scheduledDepartureAt,
-    },
-    {
-      $Type: 'UI.DataField',
-      Label: 'scheduledArrivalAt',
-      Value: scheduledArrivalAt,
-    },
-    {
-      $Type: 'UI.DataField',
-      Label: 'actualDepartureAt',
-      Value: actualDepartureAt,
-    },
-    {
-      $Type: 'UI.DataField',
-      Label: 'actualArrivalAt',
-      Value: actualArrivalAt,
-    },
-  ],
-);
-
-annotate AirlineService.Flights with @(UI.SelectionFields: [
-  status,
-  actualDepartureAt
-]);
 
 annotate AirlineService.Tickets with @(UI.LineItem #Tickets: [
   {
