@@ -90,7 +90,6 @@ modules:
             credential-type: X509_GENERATED
             app-identifier: approuter
       - name: airline-app-html5-runtime
-      - name: airline-destination-service
 
     provides:
       - name: app-api
@@ -120,61 +119,18 @@ modules:
 
   - name: airline-app-app-deployer
     type: com.sap.application.content
-    path: gen
-
-    build-parameters:
-      build-result: app/
-      requires:
-        - name: airlineappairlineui
-          artifacts:
-            - airline-ui.zip
-          target-path: app/
-
-        - name: airlineappcitiesui
-          artifacts:
-            - cities-ui.zip
-          target-path: app/
-
-        - name: airlineappaircraftmodelsui
-          artifacts:
-            - aircraft-models-ui.zip
-          target-path: app/
-
-        - name: airlineappaircrafts
-          artifacts:
-            - aircrafts.zip
-          target-path: app/
-
-        - name: airlineappairports
-          artifacts:
-            - airports.zip
-          target-path: app/
-
-        - name: airlineapproutes
-          artifacts:
-            - routes.zip
-          target-path: app/
-
+    path: .
     requires:
-      - name: srv-api
-
-      - name: airline-app-html5-repo-host
-        parameters:
-          content-target: true
-          config:
-            HTML5Runtime_enabled: true
-            IASDependencyName: airline-app-ias-api
-    parameters:
-      config:
-        destinations:
-          - Name: srv-api
-            URL: ~{srv-api/srv-url}
-            Authentication: NoAuthentication
-            Type: HTTP
-            ProxyType: Internet
-            ForwardAuthToken: true
-            DynamicDestination: true
-            IASDependencyName: airline-app-ias-api
+    - name: airline-app-html5-repo-host
+      parameters:
+        content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+      - artifacts:
+        - airline-ui.zip
+        name: airlineappairlineui
+        target-path: resources/
 
   - name: airlineappairlineui
     type: html5
@@ -188,85 +144,36 @@ modules:
       supported-platforms:
         []
 
-  - name: airlineappcitiesui
-    type: html5
-    path: app/cities-ui
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm ci
-        - npm run build
-      supported-platforms:
-        []
-
-  - name: airlineappaircraftmodelsui
-    type: html5
-    path: app/aircraft-models-ui
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm run build
-      supported-platforms:
-        []
-   
-  - name: airlineappaircrafts
-    type: html5
-    path: app/aircrafts
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm run build
-      supported-platforms:
-        []
-   
-  - name: airlineappairports
-    type: html5
-    path: app/airports
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm run build
-      supported-platforms:
-        []
-   
-  - name: airlineapproutes
-    type: html5
-    path: app/routes
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm run build
-      supported-platforms:
-        []
-    
-
-  - name: airline-app-destinations
+  - name: airline-destination-content
     type: com.sap.application.content
     requires:
-      - name: airline-app-html5-repo-host
-        parameters:
-          service-key:
-            name: airline-app-html5-repo-host-key
-      - name: srv-api
-      - name: airline-destination-service
-        parameters:
-          content-target: true
-    build-parameters:
-      no-source: true
+    - name: airline-destination-service
+      parameters:
+        content-target: true
+    - name: airline-app-html5-repo-host
+      parameters:
+        service-key:
+          name: airline-repo-host-key
+    - name: airline-app-auth
+      parameters:
+        service-key:
+          name: airline-uaa-key
     parameters:
       content:
         instance:
-          existing_destinations_policy: update
           destinations:
-            - Name: airline-app-html5-repository
-              ServiceInstanceName: airline-app-html5-repo-host
-              ServiceKeyName: airline-app-html5-repo-host-key
-              sap.cloud.service: airlineapp.service
+          - Name: airline_html_repo_host
+            ServiceInstanceName: airline-app-html5-repo-host
+            ServiceKeyName: airline-repo-host-key
+            sap.cloud.service: airline
+          - Authentication: OAuth2UserTokenExchange
+            Name: airline_uaa
+            ServiceInstanceName: airline-app-auth
+            ServiceKeyName: airline-uaa-key
+            sap.cloud.service: airline
+          existing_destinations_policy: update
+    build-parameters:
+      no-source: true
 
 resources:
 
@@ -378,5 +285,17 @@ resources:
   - name: airline-destination-service
     type: org.cloudfoundry.managed-service
     parameters:
-     service: destination
-     service-plan: lite
+      config:
+        HTML5Runtime_enabled: true
+        init_data:
+          instance:
+            destinations:
+            - Authentication: NoAuthentication
+              Name: ui5
+              ProxyType: Internet
+              Type: HTTP
+              URL: https://ui5.sap.com
+            existing_destinations_policy: update
+        version: 1.0.0
+      service: destination
+      service-plan: lite

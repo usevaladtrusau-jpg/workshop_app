@@ -1,8 +1,6 @@
 {
-  "destinations": true,
-   "workzone": true,
-   "[development]": {
-    "launchpad": {
+  "[development]": {
+   "launchpad": {
       "basePath": "/launchpad",
       "theme": "sap_horizon",
       "version": "1.154.0",
