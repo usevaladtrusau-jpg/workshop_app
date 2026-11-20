@@ -9,6 +9,7 @@ db/data/*
 .cdsrc-private.json
 default-*.json
 *.sqlite
+*.db
 
 # MTA
 mta_archives/
