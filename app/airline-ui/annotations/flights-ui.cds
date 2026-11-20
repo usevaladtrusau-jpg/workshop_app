@@ -91,7 +91,7 @@ annotate AirlineService.Flights with @(UI.SelectionFields: [
   actualDepartureAt
 ]);
 
-annotate service.Tickets with @(UI.LineItem #Tickets: [
+annotate AirlineService.Tickets with @(UI.LineItem #Tickets: [
   {
     $Type: 'UI.DataField',
     Value: totalPrice,
