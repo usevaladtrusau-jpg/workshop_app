@@ -181,6 +181,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "airlineapp.service"
+    "service": "airline"
   }
 }
