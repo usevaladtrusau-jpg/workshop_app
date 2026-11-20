@@ -90,6 +90,7 @@ modules:
             credential-type: X509_GENERATED
             app-identifier: approuter
       - name: airline-app-html5-runtime
+      - name: airline-app-portal
 
     provides:
       - name: app-api
@@ -128,15 +129,11 @@ modules:
             - airline-ui.zip
           target-path: app/
     requires:
-      - name: srv-api
       - name: airline-app-html5-repo-host
         parameters:
           content-target: true
           config:
             HTML5Runtime_enabled: true
-      - name: airline-app-portal
-        parameters:
-          content-target: true
 
   - name: airlineappairlineui
     type: html5
@@ -267,6 +264,6 @@ resources:
   - name: airline-app-portal
     type: org.cloudfoundry.managed-service
     parameters:
-      service: portal
+      service: build-workzone-standard
       service-plan: standard
       service-name: airline-app-portal
