@@ -1,4 +1,5 @@
 app/**/dist/**/*
+resources/**/*
 .vscode/
 node_modules/
 target/
