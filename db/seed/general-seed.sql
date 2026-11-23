@@ -1,3 +1,4 @@
+delete from sap_common_Countries;
 INSERT INTO sap_common_Countries  (CODE, NAME, DESCR)
 VALUES
 ('USA', 'United States', 'United States of America'),
