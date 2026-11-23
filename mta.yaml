@@ -131,10 +131,90 @@ modules:
         - airline-ui.zip
         name: airlineappairlineui
         target-path: resources/
+      - artifacts:
+        - cities-ui.zip
+        name: citiesui
+        target-path: resources/
+      - artifacts:
+        - aircraft-models-ui.zip
+        name: aircraft-models-ui
+        target-path: resources/
+      - artifacts:
+        - aircrafts.zip
+        name: aircrafts
+        target-path: resources/
+      - artifacts:
+        - airports.zip
+        name: airports
+        target-path: resources/
+      - artifacts:
+        - routes.zip
+        name: routes
+        target-path: resources/
 
   - name: airlineappairlineui
     type: html5
     path: app/airline-ui
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+
+  - name: citiesui
+    type: html5
+    path: app/cities-ui
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+ 
+  - name: aircraft-models-ui
+    type: html5
+    path: app/aircraft-models-ui
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+
+  - name: aircrafts
+    type: html5
+    path: app/aircrafts
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+
+  - name: airports
+    type: html5
+    path: app/airports
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+
+  - name: routes
+    type: html5
+    path: app/routes
     build-parameters:
       build-result: dist
       builder: custom
