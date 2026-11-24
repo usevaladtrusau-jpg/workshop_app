@@ -226,6 +226,15 @@
           }
         }
       }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.ObjectPageController": {
+            "controllerName": "airlineui.ext.controller.FlightsObjectPageExtension"
+          }
+        }
+      }
     }
   },
   "sap.fiori": {
