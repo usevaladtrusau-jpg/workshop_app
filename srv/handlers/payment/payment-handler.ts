@@ -1,6 +1,8 @@
 import { TicketRepository } from "../../repositories/ticket-repositories";
 import { DestinationService } from "../../utils/destination.service";
 
+import { TicketStatus } from "./constants";
+
 export class PaymentHandler {
   private readonly ticketRepository: TicketRepository = new TicketRepository();
 
@@ -37,6 +39,10 @@ export class PaymentHandler {
 
     if (!ticket) {
       throw new Error("Ticket with provided id was not found.");
+    }
+
+    if (ticket.status === TicketStatus.Paid) {
+      throw new Error("Provided ticket has been already paid");
     }
   }
 }

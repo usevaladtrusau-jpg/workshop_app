@@ -30,6 +30,11 @@ export default class FlightsObjectPageExtension extends ControllerExtension<Exte
 
             await oOperation.execute();
 
+            const stripeUrl = oOperation.getBoundContext().getObject().value;
+            if (stripeUrl) {
+                window.top!.location.href = stripeUrl;
+            }
+
         } catch (error) {
             Log.error(
                 "Payment processing failed",
