@@ -1,12 +1,27 @@
 using AirlineService as service from '../../srv/airline-service';
 
+annotate service.Cities with @(UI.HeaderInfo: {
+  TypeName      : 'City',
+  TypeNamePlural: 'Cities',
+
+  Title         : {
+    $Type: 'UI.DataField',
+    Value: name
+  },
+
+  Description   : {
+    $Type: 'UI.DataField',
+    Value: country.code
+  }
+});
+
 annotate service.Cities with @(
   UI.FieldGroup #GeneratedGroup: {
     $Type: 'UI.FieldGroupType',
     Data : [
       {
         $Type: 'UI.DataField',
-        Label: 'country_code',
+        Label: 'code',
         Value: country_code,
       },
       {
@@ -25,7 +40,7 @@ annotate service.Cities with @(
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
-      Label: 'country_code',
+      Label: 'code',
       Value: country_code,
     },
     {

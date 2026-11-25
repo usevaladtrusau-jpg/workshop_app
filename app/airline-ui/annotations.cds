@@ -1,0 +1,192 @@
+using AirlineService from '../../srv/airline-service';
+
+annotate AirlineService.Flights with @(UI.HeaderInfo: {
+  TypeName      : 'Flight',
+  TypeNamePlural: 'Flights',
+
+  Title         : {
+    $Type: 'UI.DataField',
+    Value: flightNumber
+  },
+
+  Description   : {
+    $Type: 'UI.DataField',
+    Value: aircraft.model.modelName
+  }
+});
+
+annotate AirlineService.Flights with @(
+  UI.FieldGroup #GeneratedGroup: {
+    $Type: 'UI.FieldGroupType',
+    Data : [
+      {
+        $Type: 'UI.DataField',
+        Label: 'flightNumber',
+        Value: flightNumber,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'scheduledDepartureAt',
+        Value: scheduledDepartureAt,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'scheduledArrivalAt',
+        Value: scheduledArrivalAt,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'actualDepartureAt',
+        Value: actualDepartureAt,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'actualArrivalAt',
+        Value: actualArrivalAt,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'boardingGate',
+        Value: boardingGate,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'status',
+        Value: status,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'route',
+        Value: route_ID,
+      },
+      {
+        $Type: 'UI.DataField',
+        Label: 'aircraft',
+        Value: aircraft_ID,
+      }
+    ],
+  },
+  UI.Facets                    : [
+    {
+      $Type : 'UI.ReferenceFacet',
+      ID    : 'GeneratedFacet1',
+      Label : 'General Information',
+      Target: '@UI.FieldGroup#GeneratedGroup',
+    },
+    {
+      $Type : 'UI.ReferenceFacet',
+      Label : 'Tickets',
+      ID    : 'Tickets',
+      Target: 'tickets/@UI.LineItem#Tickets',
+    },
+  ],
+  UI.LineItem                  : [
+    {
+      $Type: 'UI.DataField',
+      Label: 'flight number',
+      Value: flightNumber,
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'departure airport',
+      Value: route.departureAirport.name,
+    },
+
+    {
+      $Type: 'UI.DataField',
+      Label: 'arrival airport',
+      Value: route.arrivalAirport.name,
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'scheduled departure at',
+      Value: scheduledDepartureAt,
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'scheduled arrival at',
+      Value: scheduledArrivalAt,
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'actual departure at',
+      Value: actualDepartureAt,
+    },
+    {
+      $Type: 'UI.DataField',
+      Label: 'actual arrival at',
+      Value: actualArrivalAt,
+    },
+  ],
+);
+
+
+annotate AirlineService.Flights with {
+  route @(
+    Common.Text           : route.ID,
+    Common.TextArrangement: #TextOnly,
+    Common.ValueList      : {
+      $Type         : 'Common.ValueListType',
+      CollectionPath: 'Routes',
+      Parameters    : [
+        {
+          $Type            : 'Common.ValueListParameterInOut',
+          LocalDataProperty: route_ID,
+          ValueListProperty: 'ID',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'departureAirport/city/name',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'arrivalAirport/city/name',
+        },
+      ],
+    },
+  );
+};
+
+annotate AirlineService.Flights with {
+  aircraft @(
+    Common.Text           : aircraft.registrationNumber,
+    Common.TextArrangement: #TextOnly,
+    Common.ValueList      : {
+      $Type         : 'Common.ValueListType',
+      CollectionPath: 'Aircrafts',
+      Parameters    : [
+        {
+          $Type            : 'Common.ValueListParameterInOut',
+          LocalDataProperty: aircraft_ID,
+          ValueListProperty: 'ID',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'registrationNumber',
+        },
+        {
+          $Type            : 'Common.ValueListParameterDisplayOnly',
+          ValueListProperty: 'model/modelName',
+        }
+      ],
+    },
+  );
+};
+
+annotate AirlineService.Tickets with @(UI.LineItem #Tickets: [
+  {
+    $Type: 'UI.DataField',
+    Value: totalPrice,
+    Label: 'totalPrice',
+  },
+  {
+    $Type: 'UI.DataField',
+    Value: status,
+    Label: 'status',
+  },
+  {
+    $Type: 'UI.DataField',
+    Value: aircraftSeats.cabinClass,
+    Label: 'cabinClass',
+  },
+]);

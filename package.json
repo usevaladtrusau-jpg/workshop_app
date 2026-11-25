@@ -13,7 +13,12 @@
     "prepare": "husky || true",
     "types": "cds-typer \"*\" --outputDirectory @cds-models",
     "watch-airline-ui": "cds watch --open airlineui/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-cities-ui": "cds watch --open citiesui/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-cities-ui": "cds watch --open citiesui/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-aircraft-models-ui": "cds watch --open aircraftmodelsui/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-aircrafts": "cds watch --open aircrafts/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-airports": "cds watch --open airports/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-customers": "cds watch --open customers/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-routes": "cds watch --open routes/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",
@@ -42,7 +47,7 @@
     "@sap/cds-lsp": "^10.2.1",
     "@types/node": "^24.19.2",
     "@types/node-jose": "^1.1.13",
-    "cds-launchpad-plugin": "^2.3.0",
+    "cds-launchpad-plugin": "^2.3.1",
     "cds-plugin-ui5": "^0.17.0",
     "cross-env": "^10.1.0",
     "eslint": "^10.13.0",
@@ -76,6 +81,10 @@
   ],
   "sapux": [
     "app/airline-ui",
-    "app/cities-ui"
+    "app/cities-ui",
+    "app/aircraft-models-ui",
+    "app/aircrafts",
+    "app/airports",
+    "app/routes"
   ]
 }

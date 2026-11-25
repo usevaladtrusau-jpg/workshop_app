@@ -1,4 +1,3 @@
-
 {
   "welcomeFile": "/xsuaa/",
   "authenticationMethod": "route",
@@ -60,6 +59,12 @@
       "target": "/airlineui-0.0.1/$1",
       "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "destination": "srv-api",
+      "csrfProtection": true
     }
   ]
 }
