@@ -32,7 +32,7 @@ export default class FlightsObjectPageExtension extends ControllerExtension<Exte
 
             const stripeUrl = oOperation.getBoundContext().getObject().value;
             if (stripeUrl) {
-                window.location.href = stripeUrl;
+                window.top!.location.href = stripeUrl;
             }
 
         } catch (error) {
