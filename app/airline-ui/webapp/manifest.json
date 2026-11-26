@@ -191,11 +191,6 @@
                   "detail": {
                     "route": "SeatReservationsSeatsPage"
                   }
-                },
-                "tickets": {
-                  "detail": {
-                    "route": "TicketsTttPage"
-                  }
                 }
               }
             }
