@@ -36,12 +36,24 @@ annotate service.Aircrafts with @(
       }
     ]
   },
-  UI.Facets                    : [{
-    $Type : 'UI.ReferenceFacet',
-    ID    : 'GeneratedFacet1',
-    Label : 'General Information',
-    Target: '@UI.FieldGroup#GeneratedGroup',
-  }, ],
+  UI.Facets                    : [
+    {
+      $Type : 'UI.CollectionFacet',
+      Label : 'Aircraft Seats',
+      ID    : 'AircraftSeats',
+      Facets: [{
+        $Type : 'UI.ReferenceFacet',
+        ID    : 'Seats',
+        Target: 'seats/@UI.LineItem#Seats',
+      }, ],
+    },
+    {
+      $Type : 'UI.ReferenceFacet',
+      ID    : 'GeneratedFacet1',
+      Label : 'General Information',
+      Target: '@UI.FieldGroup#GeneratedGroup',
+    },
+  ],
   UI.LineItem                  : [
     {
       $Type: 'UI.DataField',
@@ -86,3 +98,5 @@ annotate service.Aircrafts with {
     },
   );
 };
+
+annotate service.AircraftsSeats with @(UI.LineItem #Seats: []);

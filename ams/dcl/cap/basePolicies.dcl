@@ -1,6 +1,6 @@
 // ---------------------------------HEADER_START-----------------------------------------------
 // Generated from a CAP model by the SAP AMS Plugin (@sap/ams) 3.10.0
-// hash of generated content: 6db4ef7a200843cf265b6fcefba868fb946247b2d021607f0c57b447b30d8e06
+// hash of generated content: 3863c4a2bbf6670e28bff9a23d301908f3bdc530522a40acb90065af05f81ece
 // ----------------------------------HEADER_END------------------------------------------------
 
 POLICY "CreateAircraftModels" {
@@ -105,6 +105,10 @@ POLICY "DeleteSeatReservations" {
 
 POLICY "DeleteTickets" {
 	ASSIGN ROLE "DeleteTickets";
+}
+
+POLICY "FillAircraft" {
+	ASSIGN ROLE "FillAircraft";
 }
 
 POLICY "ReadAircraftModels" {

@@ -120,7 +120,6 @@ annotate AirlineService.Flights with @(
   ],
 );
 
-
 annotate AirlineService.Flights with {
   route @(
     Common.Text           : route.ID,

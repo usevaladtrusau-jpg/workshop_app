@@ -58,6 +58,8 @@ POLICY FinanceManager {
 }
 
 POLICY BusinessAdministrator {
+    ASSIGN ROLE FillAircraft;
+
     ASSIGN ROLE ReadSecrets;
 
     ASSIGN ROLE ReadCustomers;

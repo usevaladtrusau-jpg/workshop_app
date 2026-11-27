@@ -152,6 +152,22 @@
                     "route": "AircraftsSeatsObjectPage"
                   }
                 }
+              },
+              "controlConfiguration": {
+                "seats/@com.sap.vocabularies.UI.v1.LineItem#Seats": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "FillAirctaftSeats": {
+                      "press": "aircrafts.ext.controller.HandleFillAircraftSeats.handleFillAircraftSeats",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "FillAircraftSeats"
+                    }
+                  }
+                }
               }
             }
           }
